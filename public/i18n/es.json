@@ -4,18 +4,6 @@
     "WELCOME_USER": "Bienvenido, {{name}}",
     "LOGOUT": "Cerrar Sesión"
   },
-  "SIDEBAR": {
-    "SEARCH_VEHICLES": "Buscar Vehículos",
-    "MY_BOOKINGS": "Mis Reservas",
-    "MY_VEHICLES": "Mis Vehículos"
-  },
-  "LOGIN": {
-    "TITLE": "Iniciar Sesión",
-    "EMAIL": "Correo Electrónico",
-    "PASSWORD": "Contraseña",
-    "BUTTON": "Ingresar",
-    "REGISTER_LINK": "¿No tienes cuenta? Regístrate"
-  },
   "MY_BOOKINGS": {
     "TITLE": "Mis Reservas",
     "NO_BOOKINGS": "Aún no tienes ninguna reserva.",
@@ -36,7 +24,6 @@
     "SUBTITLE": "Aquí tienes un resumen rápido de tu actividad.",
     "AVAILABLE_VEHICLES": "Vehículos Disponibles",
     "VIEW_ALL": "Ver todos ›",
-    "NEXT_BOOKING": "Tu Próxima Reserva",
     "ACTIVE_BOOKINGS": "Tus Reservas Activas",
     "NO_UPCOMING_BOOKINGS": "No tienes ninguna reserva activa próximamente."
   },
@@ -103,7 +90,6 @@
     "TITLE_CREATE": "Confirmar Reserva",
     "TITLE_RENEW": "Renovar Reserva",
     "VEHICLE_SUMMARY": "Resumen del Vehículo",
-    "PRICE_PER_DAY": "Precio por día",
     "SUBTITLE_CREATE": "Selecciona las fechas",
     "SUBTITLE_RENEW": "Selecciona la nueva fecha final",
     "START_DATE": "Fecha de Inicio",

@@ -1,3 +1,7 @@
+/**
+ * @class Review
+ * @description Represents the domain model for a review.
+ */
 export class Review {
   public userName?: string;
   public date: Date;

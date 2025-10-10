@@ -6,6 +6,10 @@ import { User } from '../../../features/iam/models/user.model';
 import { AuthService } from '../../../features/iam/services/auth.service';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * @Component
+ * @description The sidebar component, which provides navigation links based on the current user's role.
+ */
 @Component({
   selector: 'app-sidebar',
   standalone: true,

@@ -7,6 +7,11 @@ import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user.model';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * @Component
+ * @description Component for the user profile page, allowing users to view and edit their information,
+ * change their password, and delete their account.
+ */
 @Component({
   selector: 'app-profile',
   standalone: true,
@@ -40,6 +45,10 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * @method ngOnInit
+   * @description Initializes the component by fetching the current user's data.
+   */
   ngOnInit(): void {
     this.currentUser$.pipe(take(1)).subscribe(user => {
       if (user) {
@@ -52,10 +61,18 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * @method enterEditMode
+   * @description Enters edit mode to allow the user to modify their information.
+   */
   enterEditMode(): void {
     this.isEditMode = true;
   }
 
+  /**
+   * @method cancelEditMode
+   * @description Cancels edit mode and reverts any changes made to the user's information.
+   */
   cancelEditMode(): void {
     this.isEditMode = false;
     if (this.currentUser) {
@@ -66,6 +83,10 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  /**
+   * @method onUpdateInformation
+   * @description Handles the submission of the user information update form.
+   */
   onUpdateInformation(): void {
     if (this.infoForm.invalid || !this.currentUser) return;
 
@@ -80,6 +101,10 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * @method onChangePassword
+   * @description Handles the submission of the password change form.
+   */
   onChangePassword(): void {
     if (this.passwordForm.invalid || !this.currentUser) {
       alert('Por favor, completa todos los campos.');
@@ -109,6 +134,10 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * @method deleteAccount
+   * @description Deletes the user's account after confirming their identity.
+   */
   deleteAccount(): void {
     if (!this.currentUser) return;
 
@@ -125,6 +154,10 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  /**
+   * @method logout
+   * @description Logs out the current user.
+   */
   logout(): void {
     this.authService.logout();
   }

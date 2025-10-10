@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { Review } from '../models/review.model';
 import { ReviewDto } from '../models/review.dto';
 import { ReviewAssembler } from '../assemblers/review.assembler';
-import { User } from '../../../features/iam/models/user.model';
+import { User } from '../../iam/models/user.model';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
@@ -13,6 +13,7 @@ import { environment } from '../../../../environments/environment';
 })
 export class ReviewService {
   private apiUrl = environment.BASE_URL + environment.ENDPOINT_PATH_REVIEWS;
+  private usersApiUrl = environment.BASE_URL + environment.ENDPOINT_PATH_USERS;
 
   constructor(private http: HttpClient) {}
 
@@ -30,6 +31,6 @@ export class ReviewService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${environment.BASE_URL}/users`);
+    return this.http.get<User[]>(this.usersApiUrl);
   }
 }

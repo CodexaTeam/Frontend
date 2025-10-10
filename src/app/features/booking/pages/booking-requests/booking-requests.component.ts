@@ -4,6 +4,10 @@ import { BookingService } from '../../services/booking.service';
 import { AuthService } from '../../../iam/services/auth.service';
 import { take } from 'rxjs';
 
+/**
+ * @Component
+ * @description This component displays a list of booking requests for the vehicles owned by the current user.
+ */
 @Component({
   selector: 'app-booking-requests',
   standalone: true,
@@ -20,6 +24,10 @@ export class BookingRequestsComponent implements OnInit {
     private authService: AuthService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description On initialization, it fetches the booking requests for the current owner.
+   */
   ngOnInit(): void {
     this.authService.currentUser$.pipe(take(1)).subscribe(user => {
       if (user) {

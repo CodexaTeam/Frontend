@@ -1,9 +1,10 @@
+/**
+ * @const environment
+ * @description Environment variables for the development build.
+ */
 export const environment = {
   production: false,
-  // Base URL for the API server
   BASE_URL: 'http://localhost:3000',
-
-  // API endpoints
   ENDPOINT_PATH_VEHICLES: '/vehicles',
   ENDPOINT_PATH_USERS: '/users',
   ENDPOINT_PATH_BOOKINGS: '/bookings',

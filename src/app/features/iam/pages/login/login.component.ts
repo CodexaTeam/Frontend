@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
+/**
+ * @Component
+ * @description Component for the user login page.
+ */
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -17,6 +21,10 @@ export class LoginComponent {
 
   constructor(private authService: AuthService) {}
 
+  /**
+   * @method onSubmit
+   * @description Handles the form submission for user login.
+   */
   onSubmit() {
     this.authService.login(this.email, this.password).subscribe();
   }

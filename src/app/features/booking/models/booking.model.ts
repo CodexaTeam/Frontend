@@ -1,3 +1,7 @@
+/**
+ * @class Booking
+ * @description Represents the domain model for a booking.
+ */
 export class Booking {
   constructor(
     public id: number,

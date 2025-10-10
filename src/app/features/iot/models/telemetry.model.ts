@@ -1,3 +1,7 @@
+/**
+ * @interface Telemetry
+ * @description Represents the telemetry data for a vehicle.
+ */
 export interface Telemetry {
   id: number;
   vehicleId: number;

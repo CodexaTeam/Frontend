@@ -1,3 +1,7 @@
+/**
+ * @class VehicleDto
+ * @description Represents the data transfer object for a vehicle.
+ */
 export class VehicleDto {
   constructor(
     public id: number,

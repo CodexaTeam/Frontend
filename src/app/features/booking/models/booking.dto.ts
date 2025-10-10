@@ -1,3 +1,7 @@
+/**
+ * @interface BookingDto
+ * @description Represents the data transfer object for a booking.
+ */
 export interface BookingDto {
   id: number;
   vehicleId: number;

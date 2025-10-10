@@ -8,6 +8,11 @@ import { ReviewService } from '../../../reviews/services/review.service';
 import { TranslateModule } from '@ngx-translate/core';
 import {VehicleService} from '../../services/vehicle.service';
 
+/**
+ * @Component
+ * @description This component displays a list of all available vehicles.
+ * It fetches vehicle and user data to show vehicle details along with the owner's name.
+ */
 @Component({
   selector: 'app-vehicle-list',
   standalone: true,
@@ -25,6 +30,10 @@ export class VehicleListComponent implements OnInit {
     private authService: AuthService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description On initialization, it fetches all vehicles and users, then maps the owner's name to each vehicle.
+   */
   ngOnInit(): void {
     forkJoin({
       vehicles: this.vehicleService.getVehicles(),

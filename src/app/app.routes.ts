@@ -15,6 +15,11 @@ import { authGuard } from './core/guards/auth.guard';
 import { BookingDetailComponent } from './features/booking/pages/booking-detail/booking-detail.component';
 import { DashboardArrendatarioComponent } from './features/iam/pages/dashboard-arrendatario/dashboard-arrendatario.component';
 
+/**
+ * @const routes
+ * @description Defines the application's routes. It includes public routes for login and registration,
+ * and protected routes under the MainLayoutComponent that require authentication via the authGuard.
+ */
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

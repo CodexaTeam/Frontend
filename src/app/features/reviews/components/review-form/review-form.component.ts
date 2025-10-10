@@ -7,6 +7,10 @@ import { User } from '../../../iam/models/user.model';
 import { ReviewService } from '../../services/review.service';
 import { Review } from '../../models/review.model';
 
+/**
+ * @Component
+ * @description A form component for users to submit reviews for a vehicle.
+ */
 @Component({
   selector: 'app-review-form',
   standalone: true,
@@ -18,7 +22,7 @@ export class ReviewFormComponent implements OnInit {
   @Input() vehicleId!: number;
   @Output() reviewPosted = new EventEmitter<void>();
 
-  reviewForm: FormGroup; // Se declara aquí
+  reviewForm: FormGroup;
   private currentUser: User | null = null;
 
   constructor(
@@ -33,16 +37,29 @@ export class ReviewFormComponent implements OnInit {
     });
   }
 
+  /**
+   * @method ngOnInit
+   * @description Fetches the current user to associate with the review.
+   */
   ngOnInit(): void {
     this.authService.currentUser$.pipe(take(1)).subscribe(user => {
       this.currentUser = user;
     });
   }
 
+  /**
+   * @method setRating
+   * @description Sets the rating value in the form.
+   * @param {number} rating - The rating value.
+   */
   setRating(rating: number) {
     this.reviewForm.get('rating')?.setValue(rating);
   }
 
+  /**
+   * @method onSubmit
+   * @description Handles the submission of the review form.
+   */
   onSubmit() {
     if (this.reviewForm.invalid || !this.currentUser) {
       alert('Por favor, completa la calificación y el comentario.');

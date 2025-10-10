@@ -6,6 +6,11 @@ import { RouterModule } from '@angular/router';
 import { take, switchMap, of } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * @Component
+ * @description Dashboard for the vehicle owner, displaying metrics like total income,
+ * active rentals, and top-performing vehicles.
+ */
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -25,6 +30,10 @@ export class DashboardComponent implements OnInit {
     private authService: AuthService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description Fetches the bookings for the owner and calculates the dashboard metrics.
+   */
   ngOnInit(): void {
     this.authService.currentUser$.pipe(
       switchMap(user => {
@@ -40,6 +49,11 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  /**
+   * @method calculateMetrics
+   * @description Calculates and sets the dashboard metrics based on the booking data.
+   * @param {any[]} bookings - An array of booking data.
+   */
   calculateMetrics(bookings: any[]) {
     this.totalIncome = bookings.reduce((sum, booking) => sum + booking.precioTotal, 0);
     this.activeRentals = bookings.filter(b => b.estado === 'activa').length;

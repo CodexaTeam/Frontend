@@ -9,6 +9,11 @@ import { AuthService } from '../../../iam/services/auth.service';
 import { take } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * @Component
+ * @description This component handles the process of creating or renewing a vehicle booking.
+ * It includes a form for selecting dates and calculates the total price.
+ */
 @Component({
   selector: 'app-booking-process',
   standalone: true,
@@ -38,6 +43,11 @@ export class BookingProcessComponent implements OnInit {
     });
   }
 
+  /**
+   * @method ngOnInit
+   * @description Initializes the component by fetching vehicle and booking data based on route parameters.
+   * It determines whether the component is in 'edit' (renew) or 'create' mode.
+   */
   ngOnInit(): void {
     const vehicleId = Number(this.route.snapshot.paramMap.get('vehicleId'));
     this.bookingIdToEdit = Number(this.route.snapshot.queryParamMap.get('bookingId'));
@@ -53,13 +63,16 @@ export class BookingProcessComponent implements OnInit {
           startDate: formatDate(booking.startDate, 'yyyy-MM-dd', 'en-US'),
           endDate: formatDate(booking.endDate, 'yyyy-MM-dd', 'en-US')
         });
-        // En modo renovación, no se puede cambiar la fecha de inicio
         this.bookingForm.get('startDate')?.disable();
         this.calculateTotal();
       });
     }
   }
 
+  /**
+   * @method calculateTotal
+   * @description Calculates the total price of the booking based on the selected dates and the vehicle's daily rate.
+   */
   calculateTotal() {
     const startDate = new Date(this.bookingForm.getRawValue().startDate);
     const endDate = new Date(this.bookingForm.value.endDate);
@@ -73,6 +86,11 @@ export class BookingProcessComponent implements OnInit {
     }
   }
 
+  /**
+   * @method onSubmit
+   * @description Handles the submission of the booking form.
+   * It either updates an existing booking or creates a new one.
+   */
   onSubmit() {
     if (this.bookingForm.invalid || !this.vehicle) return;
 

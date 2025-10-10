@@ -1,3 +1,7 @@
+/**
+ * @class Vehicle
+ * @description Represents the domain model for a vehicle.
+ */
 export class Vehicle {
   public ownerName?: string;
 

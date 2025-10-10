@@ -4,18 +4,6 @@
     "WELCOME_USER": "Welcome, {{name}}",
     "LOGOUT": "Logout"
   },
-  "SIDEBAR": {
-    "SEARCH_VEHICLES": "Search Vehicles",
-    "MY_BOOKINGS": "My Bookings",
-    "MY_VEHICLES": "My Vehicles"
-  },
-  "LOGIN": {
-    "TITLE": "Login",
-    "EMAIL": "Email",
-    "PASSWORD": "Password",
-    "BUTTON": "Sign In",
-    "REGISTER_LINK": "Don't have an account? Register"
-  },
   "MY_BOOKINGS": {
     "TITLE": "My Bookings",
     "NO_BOOKINGS": "You don't have any bookings yet.",
@@ -36,7 +24,6 @@
     "SUBTITLE": "Here's a quick summary of your activity.",
     "AVAILABLE_VEHICLES": "Available Vehicles",
     "VIEW_ALL": "View all ›",
-    "NEXT_BOOKING": "Your Next Booking",
     "ACTIVE_BOOKINGS": "Your Active Bookings",
     "NO_UPCOMING_BOOKINGS": "You have no upcoming active bookings."
   },
@@ -103,7 +90,6 @@
     "TITLE_CREATE": "Confirm Booking",
     "TITLE_RENEW": "Renew Booking",
     "VEHICLE_SUMMARY": "Vehicle Summary",
-    "PRICE_PER_DAY": "Price per day",
     "SUBTITLE_CREATE": "Select the dates",
     "SUBTITLE_RENEW": "Select the new end date",
     "START_DATE": "Start Date",

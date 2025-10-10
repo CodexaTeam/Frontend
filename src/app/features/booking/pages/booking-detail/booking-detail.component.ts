@@ -10,6 +10,11 @@ import { ReviewListComponent } from '../../../reviews/components/review-list/rev
 import { ReviewFormComponent } from '../../../reviews/components/review-form/review-form.component';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * @Component
+ * @description This component displays the details of a specific booking, allowing the user to manage it (e.g., cancel, renew).
+ * It also includes review components for the associated vehicle.
+ */
 @Component({
   selector: 'app-booking-detail',
   standalone: true,
@@ -32,6 +37,10 @@ export class BookingDetailComponent implements OnInit {
     private vehicleService: VehicleService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description Initializes the component by fetching the booking and vehicle details based on the route parameter.
+   */
   ngOnInit(): void {
     const bookingId = Number(this.route.snapshot.paramMap.get('id'));
     if (bookingId) {
@@ -48,6 +57,10 @@ export class BookingDetailComponent implements OnInit {
     }
   }
 
+  /**
+   * @method onReviewPosted
+   * @description Handles the event emitted when a new review is posted, and reloads the review list.
+   */
   onReviewPosted(): void {
     alert('¡Gracias por tu opinión!');
     if (this.reviewList) {
@@ -55,6 +68,12 @@ export class BookingDetailComponent implements OnInit {
     }
   }
 
+  /**
+   * @method calculateDaysRemaining
+   * @description Calculates the number of days remaining for a booking.
+   * @param {Date} endDate - The end date of the booking.
+   * @returns {number} The number of days remaining.
+   */
   private calculateDaysRemaining(endDate: Date): number {
     const today = new Date();
     const end = new Date(endDate);
@@ -68,6 +87,10 @@ export class BookingDetailComponent implements OnInit {
     return Math.ceil(timeDiff / (1000 * 3600 * 24));
   }
 
+  /**
+   * @method cancelBooking
+   * @description Cancels the current booking after user confirmation.
+   */
   cancelBooking(): void {
     if (this.booking && confirm('¿Estás seguro de que deseas cancelar esta reserva?')) {
       this.bookingService.cancelBooking(this.booking.id).subscribe({
@@ -85,12 +108,20 @@ export class BookingDetailComponent implements OnInit {
     }
   }
 
+  /**
+   * @method renewBooking
+   * @description Navigates to the booking process page to renew the current booking.
+   */
   renewBooking(): void {
     if (this.booking) {
       this.router.navigate(['/booking', this.booking.vehicleId], { queryParams: { bookingId: this.booking.id } });
     }
   }
 
+  /**
+   * @method deleteBooking
+   * @description Deletes the current booking from the history after user confirmation.
+   */
   deleteBooking(): void {
     if (this.booking && confirm('¿Estás seguro de que deseas eliminar permanentemente esta reserva del historial?')) {
       this.bookingService.deleteBooking(this.booking.id).subscribe({

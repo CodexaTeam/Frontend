@@ -5,6 +5,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import {ReviewService} from '../../services/review.service';
 import {Review} from '../../models/review.model';
 
+/**
+ * @Component
+ * @description This component displays a paginated list of reviews for a given vehicle.
+ */
 @Component({
   selector: 'app-review-list',
   standalone: true,
@@ -23,12 +27,20 @@ export class ReviewListComponent implements OnInit {
 
   constructor(private reviewService: ReviewService) {}
 
+  /**
+   * @method ngOnInit
+   * @description Initializes the component by loading the reviews if a vehicleId is provided.
+   */
   ngOnInit(): void {
     if (this.vehicleId) {
       this.loadReviews();
     }
   }
 
+  /**
+   * @method loadReviews
+   * @description Fetches reviews and user data, then maps user names to the reviews.
+   */
   public loadReviews(): void {
     this.isLoading = true;
     const reviews$ = this.reviewService.getReviewsByVehicleId(this.vehicleId);
@@ -52,12 +64,21 @@ export class ReviewListComponent implements OnInit {
     });
   }
 
+  /**
+   * @method updatePagedReviews
+   * @description Updates the list of reviews displayed for the current page.
+   */
   updatePagedReviews(): void {
     const startIndex = (this.currentPage - 1) * this.reviewsPerPage;
     const endIndex = startIndex + this.reviewsPerPage;
     this.pagedReviews = this.allReviews.slice(startIndex, endIndex);
   }
 
+  /**
+   * @method goToPage
+   * @description Navigates to a specific page of reviews.
+   * @param {number} page - The page number to navigate to.
+   */
   goToPage(page: number): void {
     if (page >= 1 && page <= this.totalPages) {
       this.currentPage = page;

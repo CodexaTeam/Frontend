@@ -7,6 +7,11 @@ import { Vehicle } from '../../models/vehicle.model';
 import { take } from 'rxjs';
 import {VehicleService} from '../../services/vehicle.service';
 
+/**
+ * @Component
+ * @description This component provides a form for creating and editing vehicles.
+ * It handles form validation and submission for vehicle data.
+ */
 @Component({
   selector: 'app-vehicle-form',
   standalone: true,
@@ -36,19 +41,28 @@ export class VehicleFormComponent implements OnInit {
     });
   }
 
+  /**
+   * @method ngOnInit
+   * @description Fetches the current user's ID to associate with the vehicle.
+   */
   ngOnInit(): void {
     this.authService.currentUser$.pipe(take(1)).subscribe(user => {
       if (user) this.currentOwnerId = user.id;
     });
   }
 
+  /**
+   * @method onSubmit
+   * @description Handles the form submission for creating a new vehicle.
+   * It creates a new vehicle object and calls the vehicle service to save it.
+   */
   onSubmit() {
     if (this.vehicleForm.invalid || this.currentOwnerId === null) return;
 
     const formValue = this.vehicleForm.value;
 
     const vehicleData = new Vehicle(
-      Date.now(), // ID temporal
+      Date.now(), // Temporal ID
       formValue.brand,
       formValue.model,
       formValue.year,

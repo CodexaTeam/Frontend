@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import {Language, TranslateService} from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
+/**
+ * @Component
+ * @description A component that allows the user to switch between supported languages.
+ */
 @Component({
   selector: 'app-language-switcher',
   standalone: true,
@@ -16,6 +20,11 @@ export class LanguageSwitcherComponent {
     this.currentLang = translate.defaultLang || translate.getFallbackLang();
   }
 
+  /**
+   * @method switchLanguage
+   * @description Switches the application's language.
+   * @param {string} lang - The language code to switch to (e.g., 'en', 'es').
+   */
   switchLanguage(lang: string) {
     this.translate.use(lang);
     this.currentLang = lang;

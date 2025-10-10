@@ -5,6 +5,10 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { AuthService } from '../../services/auth.service';
 import { UserDto } from '../../models/user.dto';
 
+/**
+ * @Component
+ * @description Component for the user registration page. It handles the creation of new user accounts.
+ */
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -28,6 +32,11 @@ export class RegisterComponent {
     });
   }
 
+  /**
+   * @method onSubmit
+   * @description Handles the form submission for user registration.
+   * If the form is valid, it calls the AuthService to register the new user.
+   */
   onSubmit() {
     if (this.registerForm.invalid) {
       return;

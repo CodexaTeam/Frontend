@@ -4,6 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Telemetry } from '../../models/telemetry.model';
 import { TelemetryService } from '../../services/telemetry.service';
 
+/**
+ * @Component
+ * @description Component for tracking a vehicle's telemetry data in real-time.
+ */
 @Component({
   selector: 'app-tracking',
   standalone: true,
@@ -19,6 +23,10 @@ export class TrackingComponent implements OnInit {
     private telemetryService: TelemetryService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description Initializes the component by fetching the telemetry data for the vehicle specified in the route.
+   */
   ngOnInit(): void {
     const vehicleId = Number(this.route.snapshot.paramMap.get('id'));
     if (vehicleId) {

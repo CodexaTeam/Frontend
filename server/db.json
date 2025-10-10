@@ -62,16 +62,6 @@
       "status": "rented",
       "imageUrl": "https://media.ed.edmunds-media.com/nissan/versa/2023/oem/2023_nissan_versa_sedan_sr_fq_oem_1_500.jpg",
       "ownerId": 2
-    },
-    {
-      "id": 1760057651109,
-      "brand": "123",
-      "model": "213",
-      "year": 2015,
-      "pricePerDay": 120,
-      "status": "available",
-      "imageUrl": "123",
-      "ownerId": 2
     }
   ],
   "bookings": [
@@ -135,85 +125,6 @@
       "userId": 1,
       "rating": 4,
       "comment": "Buen servicio, aunque el auto tenía un pequeño detalle en la pintura."
-    },
-    {
-      "id": 1759965860520,
-      "vehicleId": 4,
-      "userId": 1,
-      "rating": 5,
-      "comment": "asdasd"
-    },
-    {
-      "id": 1759966771871,
-      "vehicleId": 1,
-      "userId": 1,
-      "rating": 5,
-      "comment": "213123123"
-    },
-    {
-      "id": 1759985338629,
-      "vehicleId": 1,
-      "userId": 1,
-      "rating": 5,
-      "comment": "Hola"
-    },
-    {
-      "id": 1759985344777,
-      "vehicleId": 1,
-      "userId": 1,
-      "rating": 5,
-      "comment": "555"
-    },
-    {
-      "id": 1759986706392,
-      "vehicleId": 2,
-      "userId": 1,
-      "rating": 4,
-      "comment": "hola "
-    },
-    {
-      "id": 1759986709895,
-      "vehicleId": 2,
-      "userId": 1,
-      "rating": 5,
-      "comment": "123123123"
-    },
-    {
-      "id": 1759987854770,
-      "vehicleId": 2,
-      "userId": 1,
-      "rating": 4,
-      "comment": "hola 123"
-    },
-    {
-      "id": 1759991737668,
-      "vehicleId": 1,
-      "userId": 1,
-      "rating": 2,
-      "comment": "2123"
-    },
-    {
-      "id": 1759997226714,
-      "vehicleId": 1,
-      "userId": 1,
-      "rating": 3,
-      "comment": "hola "
-    },
-    {
-      "id": 1759997233184,
-      "vehicleId": 1,
-      "userId": 1,
-      "rating": 2,
-      "comment": "adsadsasd"
-    },
-    {
-      "id": 1760060186201,
-      "vehicleId": 1,
-      "userId": 3,
-      "rating": 1,
-      "comment": "213123",
-      "userName": "Estefano Solis",
-      "date": "2025-10-10T01:36:26.201Z"
     }
   ],
   "telemetry": [

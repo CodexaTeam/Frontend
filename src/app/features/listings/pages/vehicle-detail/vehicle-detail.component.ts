@@ -8,6 +8,11 @@ import { ReviewService } from '../../../reviews/services/review.service';
 import { map, switchMap } from 'rxjs';
 import {VehicleService} from '../../services/vehicle.service';
 
+/**
+ * @Component
+ * @description This component displays the detailed information for a single vehicle,
+ * including its owner's name and a list of reviews.
+ */
 @Component({
   selector: 'app-vehicle-detail',
   standalone: true,
@@ -24,6 +29,11 @@ export class VehicleDetailComponent implements OnInit {
     private reviewService: ReviewService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description On initialization, it fetches the vehicle's details based on the route parameter
+   * and then fetches user data to display the owner's name.
+   */
   ngOnInit(): void {
     this.route.paramMap.pipe(
       switchMap(params => {

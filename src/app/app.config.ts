@@ -5,9 +5,12 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './shared/infrastructure/i18n/translate-loader';
-import { provideAnimations } from '@angular/platform-browser/animations'; // <-- 1. IMPORTAR
+import { provideAnimations } from '@angular/platform-browser/animations';
 
-
+/**
+ * @const appConfig
+ * @description Application configuration object that provides routing, HTTP client, animations, and translation services.
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),

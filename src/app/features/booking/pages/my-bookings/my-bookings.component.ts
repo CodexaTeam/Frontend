@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Booking } from '../../models/booking.model';
 import { BookingService } from '../../services/booking.service';
 import { AuthService } from '../../../iam/services/auth.service';
 import { VehicleService } from '../../../listings/services/vehicle.service';
 import { switchMap, of, forkJoin, map } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * @Component
+ * @description This component displays a list of all bookings made by the current user,
+ * along with details of the booked vehicle.
+ */
 @Component({
   selector: 'app-my-bookings',
   standalone: true,
@@ -25,6 +29,10 @@ export class MyBookingsComponent implements OnInit {
     private vehicleService: VehicleService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description On initialization, it fetches the current user's bookings and the details of each booked vehicle.
+   */
   ngOnInit(): void {
     this.authService.currentUser$.pipe(
       switchMap(user => {
@@ -54,6 +62,12 @@ export class MyBookingsComponent implements OnInit {
     });
   }
 
+  /**
+   * @method calculateDaysRemaining
+   * @description Calculates the number of days remaining for a booking.
+   * @param {Date} endDate - The end date of the booking.
+   * @returns {number} The number of days remaining.
+   */
   private calculateDaysRemaining(endDate: Date): number {
     const today = new Date();
     const end = new Date(endDate);

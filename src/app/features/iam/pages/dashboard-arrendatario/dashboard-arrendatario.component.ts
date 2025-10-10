@@ -9,6 +9,10 @@ import { BookingService } from '../../../booking/services/booking.service';
 import { AuthService } from '../../services/auth.service';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * @Component
+ * @description Dashboard for the renter, displaying a preview of available vehicles and active bookings.
+ */
 @Component({
   selector: 'app-dashboard-arrendatario',
   standalone: true,
@@ -27,6 +31,10 @@ export class DashboardArrendatarioComponent implements OnInit {
     private authService: AuthService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description Initializes the component by fetching available vehicles and active bookings for the current user.
+   */
   ngOnInit(): void {
     const currentUser = this.authService.getCurrentUser();
     if (!currentUser) {
