@@ -1,0 +1,28 @@
+<h1>{{ isEditMode ? 'Editar' : 'Publicar' }} Vehículo</h1>
+<div class="form-container">
+  <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="brand">Marca</label>
+      <input type="text" id="brand" formControlName="brand">
+    </div>
+    <div class="form-group">
+      <label for="model">Modelo</label>
+      <input type="text" id="model" formControlName="model">
+    </div>
+    <div class="form-group">
+      <label for="year">Año</label>
+      <input type="number" id="year" formControlName="year">
+    </div>
+    <div class="form-group">
+      <label for="pricePerDay">Precio por Día (S/)</label>
+      <input type="number" id="pricePerDay" formControlName="pricePerDay">
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">URL de la Imagen</label>
+      <input type="text" id="imageUrl" formControlName="imageUrl">
+    </div>
+    <button type="submit" class="submit-button" [disabled]="vehicleForm.invalid">
+      {{ isEditMode ? 'Guardar Cambios' : 'Publicar Vehículo' }}
+    </button>
+  </form>
+</div>

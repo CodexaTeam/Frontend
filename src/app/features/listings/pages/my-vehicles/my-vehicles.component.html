@@ -1,0 +1,30 @@
+<div class="my-vehicles-header">
+  <h1>Mis Vehículos Publicados</h1>
+  <a routerLink="/publish-vehicle" class="publish-button">
+    <span>+</span> Publicar Nuevo Vehículo
+  </a>
+</div>
+
+<div *ngIf="vehicles.length === 0" class="no-vehicles">
+  <p>Aún no has publicado ningún vehículo.</p>
+  <p>¡Haz clic en "Publicar Nuevo Vehículo" para empezar!</p>
+</div>
+
+<div class="vehicles-grid" *ngIf="vehicles.length > 0">
+  <div class="vehicle-card" *ngFor="let vehicle of vehicles">
+    <div class="card-image-wrapper">
+      <img [src]="vehicle.imageUrl" class="vehicle-image" alt="{{ vehicle.brand }}">
+      <div class="status-badge" [ngClass]="vehicle.status">
+        {{ vehicle.status === 'available' ? 'Disponible' : 'Alquilado' }}
+      </div>
+    </div>
+    <div class="card-content">
+      <h3>{{ vehicle.brand }} {{ vehicle.model }} ({{ vehicle.year }})</h3>
+      <p class="price">S/ {{ vehicle.pricePerDay }} / día</p>
+    </div>
+    <div class="card-actions">
+      <a [routerLink]="['/tracking', vehicle.id]" class="action-button monitor">Monitorear</a>
+      <a href="#" class="action-button edit">Editar</a>
+    </div>
+  </div>
+</div>
