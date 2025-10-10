@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Vehicle } from '../../models/vehicle.model';
-import { VehicleService } from '../../../../../../../../../../../../Desktop/codigo subir/Chirstian/app/features/listings/services/vehicle.service';
-import { AuthService } from '../../../iam/services/auth.service';
+import { VehicleService } from '../../services/vehicle.service';
 
 @Component({
   selector: 'app-my-vehicles',

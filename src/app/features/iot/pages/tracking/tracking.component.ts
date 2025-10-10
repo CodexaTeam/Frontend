@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Telemetry } from '../../models/telemetry.model';
-import { TelemetryService } from '../../../../../../../../Documents/Jesus/app/features/iot/services/telemetry.service';
+import { TelemetryService } from '../../services/telemetry.service';
 
 @Component({
   selector: 'app-tracking',

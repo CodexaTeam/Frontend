@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Vehicle } from '../../models/vehicle.model';
-import { VehicleService } from '../../../../../../../../../../../../Desktop/codigo subir/Chirstian/app/features/listings/services/vehicle.service';
 import { ReviewListComponent } from '../../../reviews/components/review-list/review-list.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReviewService } from '../../../reviews/services/review.service';
 import { map, switchMap } from 'rxjs';
+import {VehicleService} from '../../services/vehicle.service';
 
 @Component({
   selector: 'app-vehicle-detail',

@@ -1,5 +1,5 @@
-import { Review } from '../../../../../../../Documents/Jesus/app/features/reviews/models/review.model';
-import { ReviewDto } from '../../../../../../../Documents/Jesus/app/features/reviews/models/review.dto';
+import { Review } from '../models/review.model';
+import { ReviewDto } from '../models/review.dto';
 
 export class ReviewAssembler {
   static toModel(dto: ReviewDto): Review {

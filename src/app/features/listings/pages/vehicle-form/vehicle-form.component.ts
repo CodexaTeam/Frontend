@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { VehicleService } from '../../../../../../../../../../../../Desktop/codigo subir/Chirstian/app/features/listings/services/vehicle.service';
 import { AuthService } from '../../../iam/services/auth.service';
 import { Vehicle } from '../../models/vehicle.model';
 import { take } from 'rxjs';
+import {VehicleService} from '../../services/vehicle.service';
 
 @Component({
   selector: 'app-vehicle-form',

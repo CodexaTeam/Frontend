@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReviewService } from '../../../../../../../../Documents/Jesus/app/features/reviews/services/review.service';
-import { Review } from '../../../../../../../../Documents/Jesus/app/features/reviews/models/review.model';
 import { AuthService } from '../../../iam/services/auth.service';
 import { take } from 'rxjs';
 import { User } from '../../../iam/models/user.model';
+import { ReviewService } from '../../services/review.service';
+import { Review } from '../../models/review.model';
 
 @Component({
   selector: 'app-review-form',

@@ -1,5 +1,5 @@
-import { Vehicle } from '../../../../../../../../../../../Desktop/codigo subir/Chirstian/app/features/listings/models/vehicle.model';
-import { VehicleDto } from '../../../../../../../../../../../Desktop/codigo subir/Chirstian/app/features/listings/models/vehicle.dto';
+import {Vehicle} from '../models/vehicle.model';
+import {VehicleDto} from '../models/vehicle.dto';
 
 export class VehicleAssembler {
   static toModel(dto: any): Vehicle {

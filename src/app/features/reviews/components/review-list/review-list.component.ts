@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Review } from '../../../../../../../../Documents/Jesus/app/features/reviews/models/review.model';
-import { ReviewService } from '../../../../../../../../Documents/Jesus/app/features/reviews/services/review.service';
 import { forkJoin, map } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
+import {ReviewService} from '../../services/review.service';
+import {Review} from '../../models/review.model';
 
 @Component({
   selector: 'app-review-list',
