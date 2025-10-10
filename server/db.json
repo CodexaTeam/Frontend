@@ -1,0 +1,239 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Sergio Landa",
+      "email": "sergio@renticar.com",
+      "password": "password123",
+      "role": "arrendatario"
+    },
+    {
+      "id": 2,
+      "name": "Cristhian Huanca",
+      "email": "cristhian@renticar.com",
+      "password": "password456",
+      "role": "arrendador"
+    },
+    {
+      "name": "Estefano Solis",
+      "email": "fano.solis.campos@gmail.com",
+      "password": "1234567",
+      "role": "arrendatario",
+      "id": 3
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "brand": "Toyota",
+      "model": "Yaris",
+      "year": 2023,
+      "pricePerDay": 120,
+      "status": "available",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS48V87VNpDy1Kgu6hudgVG7C52wOE15_npNg&s",
+      "ownerId": 2
+    },
+    {
+      "id": 2,
+      "brand": "Kia",
+      "model": "Rio",
+      "year": 2022,
+      "pricePerDay": 110,
+      "status": "rented",
+      "imageUrl": "https://www.shutterstock.com/image-illustration/tula-russia-february-3-2022-260nw-2137149095.jpg",
+      "ownerId": 2
+    },
+    {
+      "id": 3,
+      "brand": "Hyundai",
+      "model": "Accent",
+      "year": 2024,
+      "pricePerDay": 135,
+      "status": "rented",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCf6wvgD4nIqQWrJ9ZtKXgxAF9g13NoTWmcg&s",
+      "ownerId": 2
+    },
+    {
+      "id": 4,
+      "brand": "Nissan",
+      "model": "Versa",
+      "year": 2023,
+      "pricePerDay": 130,
+      "status": "rented",
+      "imageUrl": "https://media.ed.edmunds-media.com/nissan/versa/2023/oem/2023_nissan_versa_sedan_sr_fq_oem_1_500.jpg",
+      "ownerId": 2
+    },
+    {
+      "id": 1760057651109,
+      "brand": "123",
+      "model": "213",
+      "year": 2015,
+      "pricePerDay": 120,
+      "status": "available",
+      "imageUrl": "123",
+      "ownerId": 2
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "vehicleId": 2,
+      "userId": 1,
+      "fechaInicio": "2025-10-10",
+      "fechaFin": "2025-10-15",
+      "precioTotal": 660,
+      "estado": "activa"
+    },
+    {
+      "id": 1759967998122,
+      "vehicleId": 1,
+      "userId": 2,
+      "fechaInicio": "2025-10-07",
+      "fechaFin": "2025-10-14",
+      "precioTotal": 840,
+      "estado": "activa"
+    },
+    {
+      "id": 1760061188151,
+      "vehicleId": 4,
+      "userId": 3,
+      "fechaInicio": "2025-10-09",
+      "fechaFin": "2025-10-16",
+      "precioTotal": 910,
+      "estado": "activa"
+    },
+    {
+      "id": 1760062128869,
+      "vehicleId": 2,
+      "userId": 3,
+      "fechaInicio": "2025-10-23",
+      "fechaFin": "2025-10-30",
+      "precioTotal": 770,
+      "estado": "activa"
+    },
+    {
+      "id": 1760062146506,
+      "vehicleId": 3,
+      "userId": 3,
+      "fechaInicio": "2025-10-30",
+      "fechaFin": "2025-11-08",
+      "precioTotal": 1215,
+      "estado": "activa"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "userId": 1,
+      "rating": 5,
+      "comment": "El auto es excelente, muy económico y en perfecto estado. Lo recomiendo."
+    },
+    {
+      "id": 2,
+      "vehicleId": 2,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Buen servicio, aunque el auto tenía un pequeño detalle en la pintura."
+    },
+    {
+      "id": 1759965860520,
+      "vehicleId": 4,
+      "userId": 1,
+      "rating": 5,
+      "comment": "asdasd"
+    },
+    {
+      "id": 1759966771871,
+      "vehicleId": 1,
+      "userId": 1,
+      "rating": 5,
+      "comment": "213123123"
+    },
+    {
+      "id": 1759985338629,
+      "vehicleId": 1,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Hola"
+    },
+    {
+      "id": 1759985344777,
+      "vehicleId": 1,
+      "userId": 1,
+      "rating": 5,
+      "comment": "555"
+    },
+    {
+      "id": 1759986706392,
+      "vehicleId": 2,
+      "userId": 1,
+      "rating": 4,
+      "comment": "hola "
+    },
+    {
+      "id": 1759986709895,
+      "vehicleId": 2,
+      "userId": 1,
+      "rating": 5,
+      "comment": "123123123"
+    },
+    {
+      "id": 1759987854770,
+      "vehicleId": 2,
+      "userId": 1,
+      "rating": 4,
+      "comment": "hola 123"
+    },
+    {
+      "id": 1759991737668,
+      "vehicleId": 1,
+      "userId": 1,
+      "rating": 2,
+      "comment": "2123"
+    },
+    {
+      "id": 1759997226714,
+      "vehicleId": 1,
+      "userId": 1,
+      "rating": 3,
+      "comment": "hola "
+    },
+    {
+      "id": 1759997233184,
+      "vehicleId": 1,
+      "userId": 1,
+      "rating": 2,
+      "comment": "adsadsasd"
+    },
+    {
+      "id": 1760060186201,
+      "vehicleId": 1,
+      "userId": 3,
+      "rating": 1,
+      "comment": "213123",
+      "userName": "Estefano Solis",
+      "date": "2025-10-10T01:36:26.201Z"
+    }
+  ],
+  "telemetry": [
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "location": "Av. La Marina, San Miguel",
+      "status": "Estacionado"
+    },
+    {
+      "id": 2,
+      "vehicleId": 2,
+      "location": "Av. Larco, Miraflores",
+      "status": "En movimiento"
+    },
+    {
+      "id": 3,
+      "vehicleId": 3,
+      "location": "Av. El Derby, Surco",
+      "status": "Estacionado"
+    }
+  ]
+}

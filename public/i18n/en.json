@@ -1,0 +1,116 @@
+{
+  "HEADER": {
+    "WELCOME_GUEST": "Welcome, Guest",
+    "WELCOME_USER": "Welcome, {{name}}",
+    "LOGOUT": "Logout"
+  },
+  "SIDEBAR": {
+    "SEARCH_VEHICLES": "Search Vehicles",
+    "MY_BOOKINGS": "My Bookings",
+    "MY_VEHICLES": "My Vehicles"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "BUTTON": "Sign In",
+    "REGISTER_LINK": "Don't have an account? Register"
+  },
+  "MY_BOOKINGS": {
+    "TITLE": "My Bookings",
+    "NO_BOOKINGS": "You don't have any bookings yet.",
+    "LOADING": "Loading bookings...",
+    "DAYS_REMAINING": "{{days}} day(s) remaining",
+    "MANAGE_BOOKING": "Manage Booking"
+  },
+  "DASHBOARD": {
+    "TITLE": "Owner's Dashboard",
+    "TOTAL_INCOME": "Total Income",
+    "ACTIVE_RENTALS": "Active Rentals",
+    "REGISTERED_VEHICLES": "Registered Vehicles",
+    "TOP_VEHICLES": "My Most Popular Vehicles",
+    "RENTALS_COUNT": "rental(s)"
+  },
+  "DASHBOARD_ARRENDATARIO": {
+    "TITLE": "Dashboard",
+    "SUBTITLE": "Here's a quick summary of your activity.",
+    "AVAILABLE_VEHICLES": "Available Vehicles",
+    "VIEW_ALL": "View all ›",
+    "NEXT_BOOKING": "Your Next Booking",
+    "ACTIVE_BOOKINGS": "Your Active Bookings",
+    "NO_UPCOMING_BOOKINGS": "You have no upcoming active bookings."
+  },
+  "VEHICLE": {
+    "PER_DAY": "/ day",
+    "OWNER": "Owner",
+    "STATUS_AVAILABLE": "Available",
+    "STATUS_RENTED": "Rented"
+  },
+  "VEHICLE_LIST": {
+    "TITLE": "Available Vehicles",
+    "VIEW_DETAILS": "View details"
+  },
+  "VEHICLE_DETAIL": {
+    "YEAR": "Year",
+    "PRICE": "Price",
+    "RENT_NOW": "Rent Now"
+  },
+  "BOOKING_DETAIL": {
+    "TITLE": "Manage Booking",
+    "FROM": "From",
+    "TO": "To",
+    "DAYS_REMAINING": "Days Remaining",
+    "TOTAL_PRICE": "Total Price",
+    "STATUS": "Status",
+    "CANCEL_BOOKING": "Cancel Booking",
+    "RENEW_BOOKING": "Renew Booking",
+    "DELETE_BOOKING": "Delete Booking",
+    "INACTIVE_BOOKING": "This booking is no longer active.",
+    "REVIEW_PROMPT": "You can leave a review once your rental is finished or cancelled."
+  },
+  "PROFILE": {
+    "TITLE": "My Profile",
+    "EDIT_INFO": "Edit Information",
+    "PERSONAL_INFO": "Personal Information",
+    "FULL_NAME": "Full Name",
+    "ROLE": "Role",
+    "CHANGE_PASSWORD": "Change Password",
+    "CURRENT_PASSWORD": "Current Password",
+    "NEW_PASSWORD": "New Password",
+    "CONFIRM_NEW_PASSWORD": "Confirm New Password",
+    "UPDATE_PASSWORD": "Update Password",
+    "DANGER_ZONE": "Danger Zone",
+    "DELETE_ACCOUNT": "Delete Account",
+    "DELETE_ACCOUNT_WARNING": "This action is permanent and cannot be undone."
+  },
+  "REVIEWS": {
+    "CLIENT_OPINIONS": "Customer Opinions",
+    "LOADING": "Loading reviews...",
+    "PAGINATION": "Page {{current}} of {{total}}",
+    "NO_REVIEWS": "This vehicle has no reviews yet."
+  },
+  "REVIEW_FORM": {
+    "WRITE_OPINION": "Write your opinion",
+    "YOUR_RATING": "Your rating:",
+    "YOUR_COMMENT": "Your comment:",
+    "SUBMIT_REVIEW": "Submit Review"
+  },
+  "COMMON": {
+    "CANCEL": "Cancel",
+    "SAVE_CHANGES": "Save Changes"
+  },
+  "BOOKING_PROCESS": {
+    "TITLE_CREATE": "Confirm Booking",
+    "TITLE_RENEW": "Renew Booking",
+    "VEHICLE_SUMMARY": "Vehicle Summary",
+    "PRICE_PER_DAY": "Price per day",
+    "SUBTITLE_CREATE": "Select the dates",
+    "SUBTITLE_RENEW": "Select the new end date",
+    "START_DATE": "Start Date",
+    "END_DATE": "End Date",
+    "TOTAL_TO_PAY": "Total to Pay",
+    "DAYS_COUNT": "{{days}} day(s)",
+    "BUTTON_CREATE": "Confirm and Pay",
+    "BUTTON_RENEW": "Update Booking"
+  }
+}
