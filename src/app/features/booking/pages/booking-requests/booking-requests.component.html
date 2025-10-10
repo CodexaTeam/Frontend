@@ -1,0 +1,22 @@
+<h1>Solicitudes de Reserva</h1>
+
+<div *ngIf="isLoading" class="loading">Cargando solicitudes...</div>
+
+<div *ngIf="!isLoading && bookingRequests.length === 0" class="no-requests">
+  <p>Todavía no tienes ninguna reserva para tus vehículos.</p>
+</div>
+
+<div class="requests-grid" *ngIf="!isLoading && bookingRequests.length > 0">
+  <div class="request-card" *ngFor="let request of bookingRequests">
+    <img [src]="request.vehicle.imageUrl" class="vehicle-image" alt="{{ request.vehicle.brand }}">
+    <div class="card-content">
+      <h3>{{ request.vehicle.brand }} {{ request.vehicle.model }}</h3>
+      <p><strong>Cliente ID:</strong> Usuario #{{ request.userId }}</p>
+      <p><strong>Fechas:</strong> {{ request.fechaInicio }} al {{ request.fechaFin }}</p>
+      <p><strong>Ingreso:</strong> <span class="price">S/ {{ request.precioTotal }}</span></p>
+    </div>
+    <div class="card-status" [ngClass]="request.estado">
+      {{ request.estado }}
+    </div>
+  </div>
+</div>
