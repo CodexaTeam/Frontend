@@ -39,4 +39,27 @@ export class BookingRequestsComponent implements OnInit {
       }
     });
   }
+
+  /**
+   * @method cancelBooking
+   * @description Cancels a booking and updates its status in the list.
+   * @param {number} bookingId - The ID of the booking to cancel.
+   */
+  cancelBooking(bookingId: number): void {
+    if (confirm('¿Estás seguro de que deseas cancelar esta reserva?')) {
+      this.bookingService.cancelBooking(bookingId).subscribe({
+        next: () => {
+          const booking = this.bookingRequests.find(b => b.id === bookingId);
+          if (booking) {
+            booking.estado = 'cancelada';
+          }
+          alert('Reserva cancelada con éxito.');
+        },
+        error: (err) => {
+          console.error('Error al cancelar la reserva:', err);
+          alert('Hubo un error al cancelar la reserva.');
+        }
+      });
+    }
+  }
 }

@@ -11,12 +11,17 @@
     <img [src]="request.vehicle.imageUrl" class="vehicle-image" alt="{{ request.vehicle.brand }}">
     <div class="card-content">
       <h3>{{ request.vehicle.brand }} {{ request.vehicle.model }}</h3>
-      <p><strong>{{ 'BOOKING_REQUESTS.CLIENT_ID' | translate }}</strong> {{ 'Usuario #' + request.userId }}</p>
+      <p><strong>{{ 'BOOKING_REQUESTS.CLIENT_NAME' | translate }}</strong> {{ request.userName }}</p>
       <p><strong>{{ 'BOOKING_REQUESTS.DATES' | translate }}</strong> {{ request.fechaInicio }} al {{ request.fechaFin }}</p>
       <p><strong>{{ 'BOOKING_REQUESTS.INCOME' | translate }}</strong> <span class="price">S/ {{ request.precioTotal }}</span></p>
     </div>
-    <div class="card-status" [ngClass]="request.estado">
-      {{ request.estado }}
+    <div class="card-footer">
+      <div class="card-status" [ngClass]="request.estado">
+        {{ request.estado }}
+      </div>
+      <button *ngIf="request.estado === 'activa'" (click)="cancelBooking(request.id)" class="action-button cancel-button">
+        {{ 'BOOKING_REQUESTS.CANCEL_BOOKING' | translate }}
+      </button>
     </div>
   </div>
 </div>

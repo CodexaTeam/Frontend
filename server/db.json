@@ -59,7 +59,7 @@
       "model": "Versa",
       "year": 2023,
       "pricePerDay": 130,
-      "status": "rented",
+      "status": "available",
       "imageUrl": "https://media.ed.edmunds-media.com/nissan/versa/2023/oem/2023_nissan_versa_sedan_sr_fq_oem_1_500.jpg",
       "ownerId": 2
     }
@@ -72,33 +72,6 @@
       "fechaInicio": "2025-10-10",
       "fechaFin": "2025-10-15",
       "precioTotal": 660,
-      "estado": "activa"
-    },
-    {
-      "id": 1759967998122,
-      "vehicleId": 1,
-      "userId": 2,
-      "fechaInicio": "2025-10-07",
-      "fechaFin": "2025-10-14",
-      "precioTotal": 840,
-      "estado": "activa"
-    },
-    {
-      "id": 1760061188151,
-      "vehicleId": 4,
-      "userId": 3,
-      "fechaInicio": "2025-10-09",
-      "fechaFin": "2025-10-16",
-      "precioTotal": 910,
-      "estado": "activa"
-    },
-    {
-      "id": 1760062128869,
-      "vehicleId": 2,
-      "userId": 3,
-      "fechaInicio": "2025-10-23",
-      "fechaFin": "2025-10-30",
-      "precioTotal": 770,
       "estado": "activa"
     },
     {
@@ -145,6 +118,12 @@
       "vehicleId": 3,
       "location": "Av. El Derby, Surco",
       "status": "Estacionado"
+    },
+    {
+      "id": 4,
+      "vehicleId": 4,
+      "location": "Av. Javier Prado, San Isidro",
+      "status": "Apagado"
     }
   ]
 }

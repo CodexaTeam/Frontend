@@ -37,6 +37,7 @@ export const routes: Routes = [
       { path: 'my-bookings/:id', component: BookingDetailComponent },
       { path: 'my-vehicles', component: MyVehiclesComponent },
       { path: 'publish-vehicle', component: VehicleFormComponent },
+      { path: 'edit-vehicle/:id', component: VehicleFormComponent }, // Nueva ruta
       { path: 'booking-requests', component: BookingRequestsComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'tracking/:id', component: TrackingComponent },

@@ -6,6 +6,7 @@ import { Booking } from '../models/booking.model';
 import { BookingDto } from '../models/booking.dto';
 import { BookingAssembler } from '../assemblers/booking.assembler';
 import { VehicleService } from '../../listings/services/vehicle.service';
+import {ReviewService} from '../../reviews/services/review.service';
 import { environment } from '../../../../environments/environment';
 
 /**
@@ -21,7 +22,8 @@ export class BookingService {
 
   constructor(
     private http: HttpClient,
-    private vehicleService: VehicleService
+    private vehicleService: VehicleService,
+    private reviewService: ReviewService
   ) {}
 
   /**
@@ -51,8 +53,8 @@ export class BookingService {
 
   /**
    * @method cancelBooking
-   * @description Cancels a booking, which also updates the vehicle's status to 'available'.
-   * @param {number} bookingId - The ID of the booking to cancel.
+   * @description Cancels and deletes a booking, which also updates the vehicle's status to 'available'.
+   * @param {number} bookingId - The ID of the booking to cancel and delete.
    * @returns {Observable<any>} An observable of the HTTP response.
    */
   cancelBooking(bookingId: number): Observable<any> {
@@ -64,8 +66,7 @@ export class BookingService {
             return this.vehicleService.updateVehicle(vehicle);
           }),
           switchMap(() => {
-            const updatedBookingFields = { estado: 'cancelada' as const };
-            return this.http.patch<BookingDto>(`${this.apiUrl}/${bookingId}`, updatedBookingFields);
+            return this.http.delete(`${this.apiUrl}/${bookingId}`);
           })
         );
       })
@@ -121,12 +122,20 @@ export class BookingService {
    * @returns {Observable<any[]>} An observable of an array of booking requests.
    */
   getBookingsForOwner(ownerId: number): Observable<any[]> {
-    return this.vehicleService.getVehiclesByOwnerId(ownerId).pipe(
-      switchMap(vehicles => {
+    return forkJoin({
+      vehicles: this.vehicleService.getVehiclesByOwnerId(ownerId),
+      users: this.reviewService.getUsers()
+    }).pipe(
+      switchMap(({ vehicles, users }) => {
         if (vehicles.length === 0) return of([]);
+        const userMap = new Map(users.map(user => [user.id, user.name]));
         const bookingRequests = vehicles.map(vehicle =>
           this.http.get<BookingDto[]>(`${this.apiUrl}?vehicleId=${vehicle.id}`).pipe(
-            map(bookings => bookings.map(booking => ({ ...booking, vehicle })))
+            map(bookings => bookings.map(booking => ({
+              ...booking,
+              vehicle,
+              userName: userMap.get(booking.userId) || `Usuario #${booking.userId}`
+            })))
           )
         );
         return forkJoin(bookingRequests).pipe(map(results => results.flat()));

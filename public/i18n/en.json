@@ -129,7 +129,8 @@
     "RENTED": "Rented",
     "PER_DAY": "/ day",
     "MONITOR": "Monitor",
-    "EDIT": "Edit"
+    "EDIT": "Edit",
+    "DELETE": "Delete"
   },
   "VEHICLE_FORM": {
     "EDIT_TITLE": "Edit Vehicle",
@@ -149,7 +150,15 @@
     "VEHICLE_ID": "Vehicle ID:",
     "LOCATION": "Location:",
     "STATUS": "Status:",
-    "LOADING": "Loading telemetry data..."
+    "LOADING": "Loading telemetry data...",
+    "VEHICLE_DETAILS": "Vehicle Details",
+    "VEHICLE_BRAND": "Brand",
+    "VEHICLE_MODEL": "Model",
+    "VEHICLE_YEAR": "Year",
+    "OWNER_DETAILS": "Owner Details",
+    "OWNER_NAME": "Name",
+    "OWNER_EMAIL": "Email",
+    "TELEMETRY": "Telemetry"
   },
   "BOOKING_REQUESTS": {
     "TITLE": "Booking Requests",
@@ -157,7 +166,9 @@
     "NO_REQUESTS": "You don't have any bookings for your vehicles yet.",
     "CLIENT_ID": "Client ID:",
     "DATES": "Dates:",
-    "INCOME": "Income:"
+    "INCOME": "Income:",
+    "CANCEL_BOOKING": "Cancel Booking",
+    "CLIENT_NAME": "Client Name:"
   },
   "SIDEBAR": {
     "DASHBOARD": "Dashboard",

@@ -80,4 +80,14 @@ export class VehicleService {
       map(updatedDto => VehicleAssembler.toModel(updatedDto))
     );
   }
+
+  /**
+   * @method deleteVehicle
+   * @description Deletes a vehicle by its ID.
+   * @param {number} id - The ID of the vehicle to delete.
+   * @returns {Observable<any>} An observable of the HTTP response.
+   */
+  deleteVehicle(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }

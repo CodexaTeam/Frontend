@@ -1,14 +1,31 @@
 <h1>{{ 'TRACKING.TITLE' | translate }}</h1>
-<div class="tracking-container" *ngIf="telemetry; else loading">
-  <div class="map-placeholder">
-    <p>{{ 'TRACKING.MAP_SIMULATION' | translate }}</p>
+<div class="tracking-container" *ngIf="!isLoading && telemetry; else loading">
+  <div class="map-container">
+    <img src="fake-map.jpg" alt="Fake Map" class="map-image">
     <div class="car-marker">🚗</div>
   </div>
   <div class="info-card">
     <h2>{{ 'TRACKING.REAL_TIME_INFO' | translate }}</h2>
-    <p><strong>{{ 'TRACKING.VEHICLE_ID' | translate }}</strong> {{ telemetry.vehicleId }}</p>
-    <p><strong>{{ 'TRACKING.LOCATION' | translate }}</strong> {{ telemetry.location }}</p>
-    <p><strong>{{ 'TRACKING.STATUS' | translate }}</strong> <span class="status" [ngClass]="telemetry.status.replace(' ', '-')">{{ telemetry.status }}</span></p>
+
+    <div class="info-section">
+      <h3>{{ 'TRACKING.VEHICLE_DETAILS' | translate }}</h3>
+      <p *ngIf="vehicle"><strong>{{ 'TRACKING.VEHICLE_BRAND' | translate }}:</strong> {{ vehicle.brand }}</p>
+      <p *ngIf="vehicle"><strong>{{ 'TRACKING.VEHICLE_MODEL' | translate }}:</strong> {{ vehicle.model }}</p>
+      <p *ngIf="vehicle"><strong>{{ 'TRACKING.VEHICLE_YEAR' | translate }}:</strong> {{ vehicle.year }}</p>
+    </div>
+
+    <div class="info-section">
+      <h3>{{ 'TRACKING.TELEMETRY' | translate }}</h3>
+      <p><strong>{{ 'TRACKING.VEHICLE_ID' | translate }}:</strong> {{ telemetry.vehicleId }}</p>
+      <p><strong>{{ 'TRACKING.LOCATION' | translate }}:</strong> {{ telemetry.location }}</p>
+      <p><strong>{{ 'TRACKING.STATUS' | translate }}:</strong> <span class="status" [ngClass]="telemetry.status.replace(' ', '-')">{{ telemetry.status }}</span></p>
+    </div>
+
+    <div class="info-section" *ngIf="owner">
+      <h3>{{ 'TRACKING.OWNER_DETAILS' | translate }}</h3>
+      <p><strong>{{ 'TRACKING.OWNER_NAME' | translate }}:</strong> {{ owner.name }}</p>
+      <p><strong>{{ 'TRACKING.OWNER_EMAIL' | translate }}:</strong> {{ owner.email }}</p>
+    </div>
   </div>
 </div>
 <ng-template #loading>

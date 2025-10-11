@@ -1,22 +1,79 @@
-.tracking-container { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-.map-placeholder {
-  background-color: #e9e9e9;
-  border-radius: 8px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 1.5em;
-  color: #aaa;
+.tracking-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.map-container {
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-.car-marker { font-size: 40px; }
-.info-card { background-color: white; padding: 20px; border-radius: 8px; }
+
+.map-image {
+  width: 100%;
+  display: block;
+}
+
+.car-marker {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.info-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.info-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.info-section {
+  margin-bottom: 20px;
+}
+
+.info-section:last-child {
+  margin-bottom: 0;
+}
+
+.info-section h3 {
+  font-size: 1.1em;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  margin: 5px 0;
+  color: #333;
+}
+
 .status {
-  padding: 4px 8px;
-  border-radius: 12px;
+  padding: 4px 12px;
+  border-radius: 15px;
   color: white;
+  font-weight: bold;
+  font-size: 0.9em;
 }
+
 .status.Estacionado { background-color: #ffc107; color: black; }
 .status.En-movimiento { background-color: #28a745; }
+
+@media (max-width: 992px) {
+  .tracking-container {
+    grid-template-columns: 1fr;
+  }
+}

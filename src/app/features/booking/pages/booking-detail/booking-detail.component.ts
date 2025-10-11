@@ -89,16 +89,14 @@ export class BookingDetailComponent implements OnInit {
 
   /**
    * @method cancelBooking
-   * @description Cancels the current booking after user confirmation.
+   * @description Cancels and deletes the current booking after user confirmation.
    */
   cancelBooking(): void {
-    if (this.booking && confirm('¿Estás seguro de que deseas cancelar esta reserva?')) {
+    if (this.booking && confirm('¿Estás seguro de que deseas cancelar esta reserva? Esta acción la eliminará permanentemente.')) {
       this.bookingService.cancelBooking(this.booking.id).subscribe({
         next: () => {
-          alert('Reserva cancelada con éxito. Ahora puedes dejar una reseña si lo deseas.');
-          if (this.booking) {
-            this.booking.status = 'cancelada';
-          }
+          alert('Reserva cancelada con éxito.');
+          this.router.navigate(['/my-bookings']);
         },
         error: (err) => {
           console.error('Error al cancelar la reserva:', err);

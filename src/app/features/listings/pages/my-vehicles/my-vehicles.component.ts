@@ -41,4 +41,24 @@ export class MyVehiclesComponent implements OnInit {
       }
     });
   }
+
+  /**
+   * @method deleteVehicle
+   * @description Prompts for confirmation and deletes a vehicle if confirmed.
+   * @param {number} id - The ID of the vehicle to be deleted.
+   */
+  deleteVehicle(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este vehículo?')) {
+      this.vehicleService.deleteVehicle(id).subscribe({
+        next: () => {
+          this.vehicles = this.vehicles.filter(v => v.id !== id);
+          alert('Vehículo eliminado con éxito.');
+        },
+        error: (err) => {
+          console.error('Error al eliminar el vehículo:', err);
+          alert('Hubo un error al eliminar el vehículo.');
+        }
+      });
+    }
+  }
 }

@@ -129,7 +129,8 @@
     "RENTED": "Alquilado",
     "PER_DAY": "/ día",
     "MONITOR": "Monitorear",
-    "EDIT": "Editar"
+    "EDIT": "Editar",
+    "DELETE": "Eliminar"
   },
   "VEHICLE_FORM": {
     "EDIT_TITLE": "Editar Vehículo",
@@ -149,7 +150,15 @@
     "VEHICLE_ID": "Vehículo ID:",
     "LOCATION": "Ubicación:",
     "STATUS": "Estado:",
-    "LOADING": "Cargando datos de telemetría..."
+    "LOADING": "Cargando datos de telemetría...",
+    "VEHICLE_DETAILS": "Detalles del Vehículo",
+    "VEHICLE_BRAND": "Marca",
+    "VEHICLE_MODEL": "Modelo",
+    "VEHICLE_YEAR": "Año",
+    "OWNER_DETAILS": "Detalles del Propietario",
+    "OWNER_NAME": "Nombre",
+    "OWNER_EMAIL": "Correo Electrónico",
+    "TELEMETRY": "Telemetría"
   },
   "BOOKING_REQUESTS": {
     "TITLE": "Solicitudes de Reserva",
@@ -157,7 +166,9 @@
     "NO_REQUESTS": "Todavía no tienes ninguna reserva para tus vehículos.",
     "CLIENT_ID": "Cliente ID:",
     "DATES": "Fechas:",
-    "INCOME": "Ingreso:"
+    "INCOME": "Ingreso:",
+    "CANCEL_BOOKING": "Cancelar Reserva",
+    "CLIENT_NAME": "Nombre del Cliente:"
   },
   "SIDEBAR": {
     "DASHBOARD": "Dashboard",

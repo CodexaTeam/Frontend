@@ -105,7 +105,7 @@ h1 {
 
 .card-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   border-top: 1px solid var(--neutral-color);
 }
 
@@ -121,13 +121,23 @@ h1 {
   color: var(--secondary-color);
   border-right: 1px solid var(--neutral-color);
 }
+
 .action-button.monitor:hover {
   background-color: #f0f8ff;
 }
 
 .action-button.edit {
   color: #ff9800;
+  border-right: 1px solid var(--neutral-color);
 }
+
 .action-button.edit:hover {
   background-color: #fff8e1;
+}
+
+.action-button.delete {
+  color: #dc3545;
+}
+.action-button.delete:hover {
+  background-color: #f8d7da;
 }

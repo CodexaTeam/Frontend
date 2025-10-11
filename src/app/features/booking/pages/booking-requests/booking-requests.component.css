@@ -41,13 +41,30 @@ h1 {
   font-weight: bold;
   color: #28a745;
 }
-.card-status {
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 15px;
-  text-align: center;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
+}
+.card-status {
+  padding: 5px 15px;
+  border-radius: 20px;
   font-weight: bold;
   color: white;
   text-transform: capitalize;
 }
 .card-status.activa { background-color: #007bff; }
 .card-status.finalizada { background-color: #6c757d; }
+.card-status.cancelada { background-color: #dc3545; }
+.action-button.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .no-requests, .loading { text-align: center; padding: 20px; color: #777; }

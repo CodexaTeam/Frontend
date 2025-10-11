@@ -8,11 +8,6 @@ import { take } from 'rxjs';
 import {VehicleService} from '../../services/vehicle.service';
 import { TranslateModule } from '@ngx-translate/core';
 
-/**
- * @Component
- * @description This component provides a form for creating and editing vehicles.
- * It handles form validation and submission for vehicle data.
- */
 @Component({
   selector: 'app-vehicle-form',
   standalone: true,
@@ -25,6 +20,7 @@ export class VehicleFormComponent implements OnInit {
   isEditMode = false;
   currentVehicleId: number | null = null;
   currentOwnerId: number | null = null;
+  imagePreview: string | ArrayBuffer | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -42,40 +38,72 @@ export class VehicleFormComponent implements OnInit {
     });
   }
 
-  /**
-   * @method ngOnInit
-   * @description Fetches the current user's ID to associate with the vehicle.
-   */
   ngOnInit(): void {
     this.authService.currentUser$.pipe(take(1)).subscribe(user => {
       if (user) this.currentOwnerId = user.id;
     });
+
+    this.route.params.subscribe(params => {
+      if (params['id']) {
+        this.isEditMode = true;
+        this.currentVehicleId = +params['id'];
+        this.vehicleService.getVehicle(this.currentVehicleId).subscribe(vehicle => {
+          this.vehicleForm.patchValue(vehicle);
+          this.imagePreview = vehicle.imageUrl;
+        });
+      }
+    });
   }
 
-  /**
-   * @method onSubmit
-   * @description Handles the form submission for creating a new vehicle.
-   * It creates a new vehicle object and calls the vehicle service to save it.
-   */
+  onFileChange(event: any) {
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.imagePreview = reader.result;
+        this.vehicleForm.patchValue({
+          imageUrl: reader.result
+        });
+      };
+    }
+  }
+
   onSubmit() {
-    if (this.vehicleForm.invalid || this.currentOwnerId === null) return;
+    if (this.vehicleForm.invalid) return;
 
     const formValue = this.vehicleForm.value;
 
-    const vehicleData = new Vehicle(
-      Date.now(), // Temporal ID
-      formValue.brand,
-      formValue.model,
-      formValue.year,
-      formValue.pricePerDay,
-      'available',
-      formValue.imageUrl,
-      this.currentOwnerId
-    );
-
-    this.vehicleService.createVehicle(vehicleData).subscribe(() => {
-      alert('¡Vehículo publicado con éxito!');
-      this.router.navigate(['/my-vehicles']);
-    });
+    if (this.isEditMode && this.currentVehicleId) {
+      const updatedVehicle = new Vehicle(
+        this.currentVehicleId,
+        formValue.brand,
+        formValue.model,
+        formValue.year,
+        formValue.pricePerDay,
+        'available',
+        formValue.imageUrl,
+        this.currentOwnerId!
+      );
+      this.vehicleService.updateVehicle(updatedVehicle).subscribe(() => {
+        alert('¡Vehículo actualizado con éxito!');
+        this.router.navigate(['/my-vehicles']);
+      });
+    } else {
+      const vehicleData = new Vehicle(
+        Date.now(), // Temporal ID
+        formValue.brand,
+        formValue.model,
+        formValue.year,
+        formValue.pricePerDay,
+        'available',
+        formValue.imageUrl,
+        this.currentOwnerId!
+      );
+      this.vehicleService.createVehicle(vehicleData).subscribe(() => {
+        alert('¡Vehículo publicado con éxito!');
+        this.router.navigate(['/my-vehicles']);
+      });
+    }
   }
 }
