@@ -4,8 +4,7 @@
  */
 export const environment = {
   production: true,
-  //BASE_URL: 'https://frontend-epwa.onrender.com',
-  BASE_URL: 'http://localhost:3000/api/v1',
+  BASE_URL: 'https://frontend-epwa.onrender.com',
   ENDPOINT_PATH_VEHICLES: '/vehicles',
   ENDPOINT_PATH_USERS: '/users',
   ENDPOINT_PATH_BOOKINGS: '/bookings',
