@@ -66,7 +66,8 @@ export class BookingService {
             return this.vehicleService.updateVehicle(vehicle);
           }),
           switchMap(() => {
-            return this.http.delete(`${this.apiUrl}/${bookingId}`);
+            // En lugar de eliminar, actualizamos el estado a 'cancelada'
+            return this.http.patch(`${this.apiUrl}/${bookingId}`, { estado: 'cancelada' });
           })
         );
       })
