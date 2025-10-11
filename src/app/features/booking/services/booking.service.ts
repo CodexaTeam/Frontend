@@ -6,7 +6,7 @@ import { Booking } from '../models/booking.model';
 import { BookingDto } from '../models/booking.dto';
 import { BookingAssembler } from '../assemblers/booking.assembler';
 import { VehicleService } from '../../listings/services/vehicle.service';
-import {ReviewService} from '../../reviews/services/review.service';
+import { ReviewService } from '../../reviews/services/review.service';
 import { environment } from '../../../../environments/environment';
 
 /**
@@ -53,8 +53,8 @@ export class BookingService {
 
   /**
    * @method cancelBooking
-   * @description Cancels and deletes a booking, which also updates the vehicle's status to 'available'.
-   * @param {number} bookingId - The ID of the booking to cancel and delete.
+   * @description Sets a booking's status to 'cancelled' and updates the vehicle's status to 'available'.
+   * @param {number} bookingId - The ID of the booking to cancel.
    * @returns {Observable<any>} An observable of the HTTP response.
    */
   cancelBooking(bookingId: number): Observable<any> {
@@ -66,7 +66,6 @@ export class BookingService {
             return this.vehicleService.updateVehicle(vehicle);
           }),
           switchMap(() => {
-            // En lugar de eliminar, actualizamos el estado a 'cancelada'
             return this.http.patch(`${this.apiUrl}/${bookingId}`, { estado: 'cancelada' });
           })
         );
@@ -82,6 +81,18 @@ export class BookingService {
    */
   deleteBooking(bookingId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${bookingId}`);
+  }
+
+  /**
+   * @method getBookingsByVehicleId
+   * @description Retrieves all bookings for a specific vehicle.
+   * @param {number} vehicleId - The ID of the vehicle.
+   * @returns {Observable<Booking[]>} An observable of an array of Booking models.
+   */
+  getBookingsByVehicleId(vehicleId: number): Observable<Booking[]> {
+    return this.http.get<BookingDto[]>(`${this.apiUrl}?vehicleId=${vehicleId}`).pipe(
+      map(dtos => dtos.map(BookingAssembler.toModel))
+    );
   }
 
   /**
@@ -120,7 +131,7 @@ export class BookingService {
    * @method getBookingsForOwner
    * @description Retrieves all booking requests for vehicles owned by a specific user.
    * @param {number} ownerId - The ID of the owner.
-   * @returns {Observable<any[]>} An observable of an array of booking requests.
+   * @returns {Observable<any[]>} An observable of an array of booking requests with vehicle and user details.
    */
   getBookingsForOwner(ownerId: number): Observable<any[]> {
     return forkJoin({

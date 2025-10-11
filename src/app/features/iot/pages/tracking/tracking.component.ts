@@ -8,9 +8,13 @@ import { Vehicle } from '../../../listings/models/vehicle.model';
 import { User } from '../../../iam/models/user.model';
 import { VehicleService } from '../../../listings/services/vehicle.service';
 import { ReviewService } from '../../../reviews/services/review.service';
-import { BookingService } from '../../../booking/services/booking.service'; // Importado
+import { BookingService } from '../../../booking/services/booking.service';
 import { switchMap, forkJoin, map } from 'rxjs';
 
+/**
+ * @Component
+ * @description Component for tracking a vehicle's telemetry data in real-time.
+ */
 @Component({
   selector: 'app-tracking',
   standalone: true,
@@ -21,7 +25,7 @@ import { switchMap, forkJoin, map } from 'rxjs';
 export class TrackingComponent implements OnInit {
   telemetry: Telemetry | undefined;
   vehicle: Vehicle | undefined;
-  renter: User | undefined; // Renombrado de 'owner' a 'renter'
+  renter: User | undefined;
   isLoading = true;
 
   constructor(
@@ -29,27 +33,31 @@ export class TrackingComponent implements OnInit {
     private telemetryService: TelemetryService,
     private vehicleService: VehicleService,
     private reviewService: ReviewService,
-    private bookingService: BookingService // Inyectado
+    private bookingService: BookingService
   ) {}
 
+  /**
+   * @method ngOnInit
+   * @description Initializes the component by fetching the telemetry data, vehicle details,
+   * and renter information for the vehicle specified in the route.
+   */
   ngOnInit(): void {
     const vehicleId = Number(this.route.snapshot.paramMap.get('id'));
     if (vehicleId) {
       this.telemetryService.getTelemetryByVehicleId(vehicleId).pipe(
         switchMap(telemetry => {
           this.telemetry = telemetry;
-          const activeBooking$ = this.bookingService.getBookingsForOwner(telemetry.vehicleId).pipe(
-            map(bookings => bookings.find(b => b.estado === 'activa' && b.vehicleId === vehicleId))
-          );
 
           return forkJoin({
             vehicle: this.vehicleService.getVehicle(vehicleId),
             users: this.reviewService.getUsers(),
-            activeBooking: activeBooking$
+            bookings: this.bookingService.getBookingsByVehicleId(vehicleId)
           });
         }),
-        map(({ vehicle, users, activeBooking }) => {
+        map(({ vehicle, users, bookings }) => {
           this.vehicle = vehicle;
+          const activeBooking = bookings.find(b => b.status === 'activa');
+
           if (activeBooking) {
             this.renter = users.find(u => u.id === activeBooking.userId);
           }

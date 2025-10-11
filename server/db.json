@@ -15,7 +15,6 @@
       "role": "arrendador"
     },
     {
-      "id": 3,
       "name": "Estefano Solis",
       "email": "fano.solis.campos@gmail.com",
       "password": "1234567",
@@ -44,7 +43,7 @@
       "model": "Yaris",
       "year": 2023,
       "pricePerDay": 120,
-      "status": "available",
+      "status": "rented",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS48V87VNpDy1Kgu6hudgVG7C52wOE15_npNg&s",
       "ownerId": 2
     },
@@ -90,12 +89,21 @@
       "estado": "activa"
     },
     {
-      "id": 1760062146506,
+      "id": 2,
       "vehicleId": 3,
       "userId": 3,
       "fechaInicio": "2025-10-30",
       "fechaFin": "2025-11-08",
       "precioTotal": 1215,
+      "estado": "activa"
+    },
+    {
+      "id": 3,
+      "vehicleId": 1,
+      "userId": 4,
+      "fechaInicio": "2025-10-05",
+      "fechaFin": "2025-10-20",
+      "precioTotal": 1800,
       "estado": "activa"
     }
   ],
