@@ -35,7 +35,8 @@
   },
   "VEHICLE_LIST": {
     "TITLE": "Available Vehicles",
-    "VIEW_DETAILS": "View details"
+    "VIEW_DETAILS": "View details",
+    "NO_VEHICLES": "No vehicles available."
   },
   "VEHICLE_DETAIL": {
     "YEAR": "Year",
@@ -98,5 +99,73 @@
     "DAYS_COUNT": "{{days}} day(s)",
     "BUTTON_CREATE": "Confirm and Pay",
     "BUTTON_RENEW": "Update Booking"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "BUTTON": "Login",
+    "NO_ACCOUNT": "Don't have an account?",
+    "REGISTER": "Register"
+  },
+  "REGISTER": {
+    "TITLE": "Create Account",
+    "FULL_NAME": "Full Name",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "ROLE_PROMPT": "I want to register as:",
+    "RENTER": "Renter (to rent)",
+    "OWNER": "Owner (to publish)",
+    "BUTTON": "Register",
+    "HAVE_ACCOUNT": "Already have an account?",
+    "LOGIN": "Login"
+  },
+  "MY_VEHICLES": {
+    "TITLE": "My Published Vehicles",
+    "PUBLISH_BUTTON": "Publish New Vehicle",
+    "NO_VEHICLES_P1": "You haven't published any vehicles yet.",
+    "NO_VEHICLES_P2": "Click on 'Publish New Vehicle' to get started!",
+    "AVAILABLE": "Available",
+    "RENTED": "Rented",
+    "PER_DAY": "/ day",
+    "MONITOR": "Monitor",
+    "EDIT": "Edit"
+  },
+  "VEHICLE_FORM": {
+    "EDIT_TITLE": "Edit Vehicle",
+    "PUBLISH_TITLE": "Publish Vehicle",
+    "BRAND": "Brand",
+    "MODEL": "Model",
+    "YEAR": "Year",
+    "PRICE_PER_DAY": "Price per Day (S/)",
+    "IMAGE_URL": "Image URL",
+    "SAVE_CHANGES": "Save Changes",
+    "PUBLISH_VEHICLE": "Publish Vehicle"
+  },
+  "TRACKING": {
+    "TITLE": "Vehicle Monitoring",
+    "MAP_SIMULATION": "Map Simulation",
+    "REAL_TIME_INFO": "Real-Time Information",
+    "VEHICLE_ID": "Vehicle ID:",
+    "LOCATION": "Location:",
+    "STATUS": "Status:",
+    "LOADING": "Loading telemetry data..."
+  },
+  "BOOKING_REQUESTS": {
+    "TITLE": "Booking Requests",
+    "LOADING": "Loading requests...",
+    "NO_REQUESTS": "You don't have any bookings for your vehicles yet.",
+    "CLIENT_ID": "Client ID:",
+    "DATES": "Dates:",
+    "INCOME": "Income:"
+  },
+  "SIDEBAR": {
+    "DASHBOARD": "Dashboard",
+    "SEARCH_VEHICLES": "Search Vehicles",
+    "MY_BOOKINGS": "My Bookings",
+    "MY_PROFILE": "My Profile",
+    "MY_VEHICLES": "My Vehicles",
+    "PUBLISH_VEHICLE": "Publish Vehicle",
+    "REQUESTS": "Requests"
   }
 }

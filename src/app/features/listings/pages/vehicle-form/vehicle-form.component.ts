@@ -6,6 +6,7 @@ import { AuthService } from '../../../iam/services/auth.service';
 import { Vehicle } from '../../models/vehicle.model';
 import { take } from 'rxjs';
 import {VehicleService} from '../../services/vehicle.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @Component
@@ -15,7 +16,7 @@ import {VehicleService} from '../../services/vehicle.service';
 @Component({
   selector: 'app-vehicle-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './vehicle-form.component.html',
   styleUrls: ['./vehicle-form.component.css']
 })

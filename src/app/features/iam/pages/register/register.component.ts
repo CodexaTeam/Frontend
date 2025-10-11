@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { UserDto } from '../../models/user.dto';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @Component
@@ -12,7 +13,7 @@ import { UserDto } from '../../models/user.dto';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })

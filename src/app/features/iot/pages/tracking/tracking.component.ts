@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Telemetry } from '../../models/telemetry.model';
 import { TelemetryService } from '../../services/telemetry.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @Component
@@ -11,7 +12,7 @@ import { TelemetryService } from '../../services/telemetry.service';
 @Component({
   selector: 'app-tracking',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './tracking.component.html',
   styleUrls: ['./tracking.component.css']
 })

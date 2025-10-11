@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BookingService } from '../../services/booking.service';
 import { AuthService } from '../../../iam/services/auth.service';
 import { take } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @Component
@@ -11,7 +12,7 @@ import { take } from 'rxjs';
 @Component({
   selector: 'app-booking-requests',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './booking-requests.component.html',
   styleUrls: ['./booking-requests.component.css']
 })

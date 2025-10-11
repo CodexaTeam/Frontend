@@ -1,13 +1,13 @@
 <div class="my-vehicles-header">
-  <h1>Mis Vehículos Publicados</h1>
+  <h1>{{ 'MY_VEHICLES.TITLE' | translate }}</h1>
   <a routerLink="/publish-vehicle" class="publish-button">
-    <span>+</span> Publicar Nuevo Vehículo
+    <span>+</span> {{ 'MY_VEHICLES.PUBLISH_BUTTON' | translate }}
   </a>
 </div>
 
 <div *ngIf="vehicles.length === 0" class="no-vehicles">
-  <p>Aún no has publicado ningún vehículo.</p>
-  <p>¡Haz clic en "Publicar Nuevo Vehículo" para empezar!</p>
+  <p>{{ 'MY_VEHICLES.NO_VEHICLES_P1' | translate }}</p>
+  <p>{{ 'MY_VEHICLES.NO_VEHICLES_P2' | translate }}</p>
 </div>
 
 <div class="vehicles-grid" *ngIf="vehicles.length > 0">
@@ -15,16 +15,16 @@
     <div class="card-image-wrapper">
       <img [src]="vehicle.imageUrl" class="vehicle-image" alt="{{ vehicle.brand }}">
       <div class="status-badge" [ngClass]="vehicle.status">
-        {{ vehicle.status === 'available' ? 'Disponible' : 'Alquilado' }}
+        {{ vehicle.status === 'available' ? ('MY_VEHICLES.AVAILABLE' | translate) : ('MY_VEHICLES.RENTED' | translate) }}
       </div>
     </div>
     <div class="card-content">
       <h3>{{ vehicle.brand }} {{ vehicle.model }} ({{ vehicle.year }})</h3>
-      <p class="price">S/ {{ vehicle.pricePerDay }} / día</p>
+      <p class="price">S/ {{ vehicle.pricePerDay }} {{ 'MY_VEHICLES.PER_DAY' | translate }}</p>
     </div>
     <div class="card-actions">
-      <a [routerLink]="['/tracking', vehicle.id]" class="action-button monitor">Monitorear</a>
-      <a href="#" class="action-button edit">Editar</a>
+      <a [routerLink]="['/tracking', vehicle.id]" class="action-button monitor">{{ 'MY_VEHICLES.MONITOR' | translate }}</a>
+      <a href="#" class="action-button edit">{{ 'MY_VEHICLES.EDIT' | translate }}</a>
     </div>
   </div>
 </div>

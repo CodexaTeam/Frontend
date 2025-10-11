@@ -1,9 +1,9 @@
-<h1>Solicitudes de Reserva</h1>
+<h1>{{ 'BOOKING_REQUESTS.TITLE' | translate }}</h1>
 
-<div *ngIf="isLoading" class="loading">Cargando solicitudes...</div>
+<div *ngIf="isLoading" class="loading">{{ 'BOOKING_REQUESTS.LOADING' | translate }}</div>
 
 <div *ngIf="!isLoading && bookingRequests.length === 0" class="no-requests">
-  <p>Todavía no tienes ninguna reserva para tus vehículos.</p>
+  <p>{{ 'BOOKING_REQUESTS.NO_REQUESTS' | translate }}</p>
 </div>
 
 <div class="requests-grid" *ngIf="!isLoading && bookingRequests.length > 0">
@@ -11,9 +11,9 @@
     <img [src]="request.vehicle.imageUrl" class="vehicle-image" alt="{{ request.vehicle.brand }}">
     <div class="card-content">
       <h3>{{ request.vehicle.brand }} {{ request.vehicle.model }}</h3>
-      <p><strong>Cliente ID:</strong> Usuario #{{ request.userId }}</p>
-      <p><strong>Fechas:</strong> {{ request.fechaInicio }} al {{ request.fechaFin }}</p>
-      <p><strong>Ingreso:</strong> <span class="price">S/ {{ request.precioTotal }}</span></p>
+      <p><strong>{{ 'BOOKING_REQUESTS.CLIENT_ID' | translate }}</strong> {{ 'Usuario #' + request.userId }}</p>
+      <p><strong>{{ 'BOOKING_REQUESTS.DATES' | translate }}</strong> {{ request.fechaInicio }} al {{ request.fechaFin }}</p>
+      <p><strong>{{ 'BOOKING_REQUESTS.INCOME' | translate }}</strong> <span class="price">S/ {{ request.precioTotal }}</span></p>
     </div>
     <div class="card-status" [ngClass]="request.estado">
       {{ request.estado }}

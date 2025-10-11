@@ -1,16 +1,16 @@
-<h1>Monitoreo del Vehículo</h1>
+<h1>{{ 'TRACKING.TITLE' | translate }}</h1>
 <div class="tracking-container" *ngIf="telemetry; else loading">
   <div class="map-placeholder">
-    <p>Simulación de Mapa</p>
+    <p>{{ 'TRACKING.MAP_SIMULATION' | translate }}</p>
     <div class="car-marker">🚗</div>
   </div>
   <div class="info-card">
-    <h2>Información en Tiempo Real</h2>
-    <p><strong>Vehículo ID:</strong> {{ telemetry.vehicleId }}</p>
-    <p><strong>Ubicación:</strong> {{ telemetry.location }}</p>
-    <p><strong>Estado:</strong> <span class="status" [ngClass]="telemetry.status.replace(' ', '-')">{{ telemetry.status }}</span></p>
+    <h2>{{ 'TRACKING.REAL_TIME_INFO' | translate }}</h2>
+    <p><strong>{{ 'TRACKING.VEHICLE_ID' | translate }}</strong> {{ telemetry.vehicleId }}</p>
+    <p><strong>{{ 'TRACKING.LOCATION' | translate }}</strong> {{ telemetry.location }}</p>
+    <p><strong>{{ 'TRACKING.STATUS' | translate }}</strong> <span class="status" [ngClass]="telemetry.status.replace(' ', '-')">{{ telemetry.status }}</span></p>
   </div>
 </div>
 <ng-template #loading>
-  <p>Cargando datos de telemetría...</p>
+  <p>{{ 'TRACKING.LOADING' | translate }}</p>
 </ng-template>

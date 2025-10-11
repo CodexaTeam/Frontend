@@ -5,6 +5,7 @@ import { Vehicle } from '../../models/vehicle.model';
 import { VehicleService } from '../../services/vehicle.service';
 import { AuthService } from '../../../iam/services/auth.service';
 import { take } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @Component
@@ -13,7 +14,7 @@ import { take } from 'rxjs';
 @Component({
   selector: 'app-my-vehicles',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './my-vehicles.component.html',
   styleUrls: ['./my-vehicles.component.css']
 })

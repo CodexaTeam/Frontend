@@ -35,7 +35,8 @@
   },
   "VEHICLE_LIST": {
     "TITLE": "Vehículos Disponibles",
-    "VIEW_DETAILS": "Ver detalles"
+    "VIEW_DETAILS": "Ver detalles",
+    "NO_VEHICLES": "No hay vehículos disponibles."
   },
   "VEHICLE_DETAIL": {
     "YEAR": "Año",
@@ -98,5 +99,73 @@
     "DAYS_COUNT": "{{days}} día(s)",
     "BUTTON_CREATE": "Confirmar y Pagar",
     "BUTTON_RENEW": "Actualizar Reserva"
+  },
+  "LOGIN": {
+    "TITLE": "Iniciar Sesión",
+    "EMAIL": "Correo Electrónico",
+    "PASSWORD": "Contraseña",
+    "BUTTON": "Ingresar",
+    "NO_ACCOUNT": "¿No tienes cuenta?",
+    "REGISTER": "Regístrate"
+  },
+  "REGISTER": {
+    "TITLE": "Crear Cuenta",
+    "FULL_NAME": "Nombre Completo",
+    "EMAIL": "Correo Electrónico",
+    "PASSWORD": "Contraseña",
+    "ROLE_PROMPT": "Quiero registrarme como:",
+    "RENTER": "Arrendatario (para alquilar)",
+    "OWNER": "Arrendador (para publicar)",
+    "BUTTON": "Registrarse",
+    "HAVE_ACCOUNT": "¿Ya tienes cuenta?",
+    "LOGIN": "Inicia Sesión"
+  },
+  "MY_VEHICLES": {
+    "TITLE": "Mis Vehículos Publicados",
+    "PUBLISH_BUTTON": "Publicar Nuevo Vehículo",
+    "NO_VEHICLES_P1": "Aún no has publicado ningún vehículo.",
+    "NO_VEHICLES_P2": "¡Haz clic en 'Publicar Nuevo Vehículo' para empezar!",
+    "AVAILABLE": "Disponible",
+    "RENTED": "Alquilado",
+    "PER_DAY": "/ día",
+    "MONITOR": "Monitorear",
+    "EDIT": "Editar"
+  },
+  "VEHICLE_FORM": {
+    "EDIT_TITLE": "Editar Vehículo",
+    "PUBLISH_TITLE": "Publicar Vehículo",
+    "BRAND": "Marca",
+    "MODEL": "Modelo",
+    "YEAR": "Año",
+    "PRICE_PER_DAY": "Precio por Día (S/)",
+    "IMAGE_URL": "URL de la Imagen",
+    "SAVE_CHANGES": "Guardar Cambios",
+    "PUBLISH_VEHICLE": "Publicar Vehículo"
+  },
+  "TRACKING": {
+    "TITLE": "Monitoreo del Vehículo",
+    "MAP_SIMULATION": "Simulación de Mapa",
+    "REAL_TIME_INFO": "Información en Tiempo Real",
+    "VEHICLE_ID": "Vehículo ID:",
+    "LOCATION": "Ubicación:",
+    "STATUS": "Estado:",
+    "LOADING": "Cargando datos de telemetría..."
+  },
+  "BOOKING_REQUESTS": {
+    "TITLE": "Solicitudes de Reserva",
+    "LOADING": "Cargando solicitudes...",
+    "NO_REQUESTS": "Todavía no tienes ninguna reserva para tus vehículos.",
+    "CLIENT_ID": "Cliente ID:",
+    "DATES": "Fechas:",
+    "INCOME": "Ingreso:"
+  },
+  "SIDEBAR": {
+    "DASHBOARD": "Dashboard",
+    "SEARCH_VEHICLES": "Buscar Vehículos",
+    "MY_BOOKINGS": "Mis Reservas",
+    "MY_PROFILE": "Mi Perfil",
+    "MY_VEHICLES": "Mis Vehículos",
+    "PUBLISH_VEHICLE": "Publicar Vehículo",
+    "REQUESTS": "Solicitudes"
   }
 }

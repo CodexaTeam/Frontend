@@ -1,18 +1,18 @@
 <div class="auth-container">
   <div class="auth-card">
-    <h2>Iniciar Sesión</h2>
+    <h2>{{ 'LOGIN.TITLE' | translate }}</h2>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="email">Correo Electrónico</label>
+        <label for="email">{{ 'LOGIN.EMAIL' | translate }}</label>
         <input type="email" id="email" [(ngModel)]="email" name="email" required>
       </div>
       <div class="form-group">
-        <label for="password">Contraseña</label>
+        <label for="password">{{ 'LOGIN.PASSWORD' | translate }}</label>
         <input type="password" id="password" [(ngModel)]="password" name="password" required>
       </div>
-      <button type="submit" class="auth-button">Ingresar</button>
+      <button type="submit" class="auth-button">{{ 'LOGIN.BUTTON' | translate }}</button>
       <div class="switch-link">
-        ¿No tienes cuenta? <a routerLink="/register">Regístrate</a>
+        {{ 'LOGIN.NO_ACCOUNT' | translate }} <a routerLink="/register">{{ 'LOGIN.REGISTER' | translate }}</a>
       </div>
     </form>
   </div>

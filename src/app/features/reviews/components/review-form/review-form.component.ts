@@ -6,6 +6,7 @@ import { take } from 'rxjs';
 import { User } from '../../../iam/models/user.model';
 import { ReviewService } from '../../services/review.service';
 import { Review } from '../../models/review.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * @Component
@@ -14,7 +15,7 @@ import { Review } from '../../models/review.model';
 @Component({
   selector: 'app-review-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './review-form.component.html',
   styleUrls: ['./review-form.component.css']
 })
