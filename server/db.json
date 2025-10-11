@@ -15,11 +15,26 @@
       "role": "arrendador"
     },
     {
+      "id": 3,
       "name": "Estefano Solis",
       "email": "fano.solis.campos@gmail.com",
       "password": "1234567",
       "role": "arrendatario",
       "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Ana Torres",
+      "email": "ana@renticar.com",
+      "password": "password789",
+      "role": "arrendatario"
+    },
+    {
+      "id": 5,
+      "name": "Carlos Gomez",
+      "email": "carlos@renticar.com",
+      "password": "passwordabc",
+      "role": "arrendatario"
     }
   ],
   "vehicles": [
@@ -85,20 +100,38 @@
     }
   ],
   "reviews": [
-    {
-      "id": 1,
-      "vehicleId": 1,
-      "userId": 1,
-      "rating": 5,
-      "comment": "El auto es excelente, muy económico y en perfecto estado. Lo recomiendo."
-    },
-    {
-      "id": 2,
-      "vehicleId": 2,
-      "userId": 1,
-      "rating": 4,
-      "comment": "Buen servicio, aunque el auto tenía un pequeño detalle en la pintura."
-    }
+    { "id": 1, "vehicleId": 1, "userId": 1, "rating": 5, "comment": "El auto es excelente, muy económico y en perfecto estado. Lo recomiendo.", "date": "2025-09-15T14:22:18.024Z" },
+    { "id": 2, "vehicleId": 2, "userId": 1, "rating": 4, "comment": "Buen servicio, aunque el auto tenía un pequeño detalle en la pintura.", "date": "2025-08-20T11:30:05.024Z" },
+    { "id": 3, "vehicleId": 1, "userId": 3, "rating": 4, "comment": "Muy confiable y el consumo de gasolina es bajo. Ideal para la ciudad.", "date": "2025-09-28T18:45:10.024Z" },
+    { "id": 4, "vehicleId": 3, "userId": 1, "rating": 5, "comment": "El coche es prácticamente nuevo y muy cómodo. El proceso de alquiler fue rápido y sencillo.", "date": "2025-10-01T09:15:40.024Z" },
+    { "id": 5, "vehicleId": 4, "userId": 3, "rating": 3, "comment": "El auto estaba bien, pero la limpieza podría haber sido mejor. Por lo demás, todo correcto.", "date": "2025-10-05T16:05:12.024Z" },
+    { "id": 6, "vehicleId": 2, "userId": 4, "rating": 5, "comment": "¡Fantástico! El Kia Rio es un coche genial y el trato con el arrendador fue excelente. Repetiré sin duda.", "date": "2025-10-02T12:00:00.024Z" },
+    { "id": 7, "vehicleId": 3, "userId": 4, "rating": 4, "comment": "Un Hyundai Accent muy bien cuidado. Perfecto para viajes largos. Lo único es que el sistema de audio es un poco antiguo.", "date": "2025-09-03T20:10:25.024Z" },
+    { "id": 8, "vehicleId": 1, "userId": 4, "rating": 5, "comment": "Servicio impecable. El Yaris estaba limpio, lleno de gasolina y listo para usar. 10/10.", "date": "2025-10-10T08:30:00.024Z" },
+    { "id": 9, "vehicleId": 4, "userId": 1, "rating": 5, "comment": "El Nissan Versa es súper espacioso y cómodo. Me sorprendió gratamente. Muy recomendable.", "date": "2025-09-22T10:00:00.024Z" },
+    { "id": 10, "vehicleId": 1, "userId": 5, "rating": 3, "comment": "El coche funciona bien, pero tardaron en entregármelo. La comunicación podría mejorar.", "date": "2025-10-11T14:00:00.024Z" },
+    { "id": 11, "vehicleId": 2, "userId": 3, "rating": 4, "comment": "Un coche muy práctico para el día a día. El aire acondicionado funcionaba de maravilla.", "date": "2025-10-12T11:20:00.024Z" },
+    { "id": 12, "vehicleId": 3, "userId": 5, "rating": 5, "comment": "De los mejores coches que he alquilado. Moderno, limpio y con un rendimiento excelente. Vale la pena.", "date": "2025-10-13T19:00:00.024Z" },
+    { "id": 13, "vehicleId": 4, "userId": 4, "rating": 4, "comment": "Buena experiencia en general. El coche es muy suave de conducir.", "date": "2025-10-14T09:45:00.024Z" },
+    { "id": 14, "vehicleId": 1, "userId": 1, "rating": 5, "comment": "Segunda vez que alquilo este Yaris y sigo encantado. El dueño es muy amable.", "date": "2025-10-15T13:10:00.024Z" },
+    { "id": 15, "vehicleId": 2, "userId": 5, "rating": 2, "comment": "No me gustó. El coche olía a tabaco y no me avisaron.", "date": "2025-10-16T17:00:00.024Z" },
+    { "id": 16, "vehicleId": 3, "userId": 3, "rating": 5, "comment": "Tecnología de punta y muy seguro. Me sentí muy a gusto conduciéndolo.", "date": "2025-10-17T15:00:00.024Z" },
+    { "id": 17, "vehicleId": 4, "userId": 5, "rating": 4, "comment": "Perfecto para un viaje familiar de fin de semana. El maletero es enorme.", "date": "2025-10-18T10:30:00.024Z" },
+    { "id": 18, "vehicleId": 1, "userId": 3, "rating": 4, "comment": "El proceso de recogida y devolución fue muy ágil. El coche estaba en buen estado.", "date": "2025-10-19T21:00:00.024Z" },
+    { "id": 19, "vehicleId": 2, "userId": 1, "rating": 5, "comment": "A pesar del detalle en la pintura que mencioné la vez anterior, el coche funciona de maravilla. Volvería a alquilarlo.", "date": "2025-10-20T11:00:00.024Z" },
+    { "id": 20, "vehicleId": 3, "userId": 1, "rating": 4, "comment": "Confortable y elegante. Me sirvió perfecto para una reunión de trabajo.", "date": "2025-10-21T18:20:00.024Z" },
+    { "id": 21, "vehicleId": 4, "userId": 1, "rating": 5, "comment": "Todo perfecto. El coche es una maravilla y el propietario muy atento. 100% recomendado.", "date": "2025-10-22T09:00:00.024Z" },
+    { "id": 22, "vehicleId": 1, "userId": 5, "rating": 4, "comment": "Buena relación calidad-precio. Un coche sencillo pero que cumple con todo lo necesario.", "date": "2025-10-23T16:50:00.024Z" },
+    { "id": 23, "vehicleId": 2, "userId": 3, "rating": 3, "comment": "El coche es económico, pero le faltaba una limpieza a fondo. Aceptable por el precio.", "date": "2025-10-24T12:00:00.024Z" },
+    { "id": 24, "vehicleId": 3, "userId": 4, "rating": 5, "comment": "¡Espectacular! Se nota que el coche es nuevo y de alta gama. La mejor experiencia de alquiler que he tenido.", "date": "2025-10-25T14:30:00.024Z" },
+    { "id": 25, "vehicleId": 4, "userId": 5, "rating": 5, "comment": "Muy satisfecho con el alquiler. El coche es cómodo, espacioso y el consumo es razonable.", "date": "2025-10-26T11:15:00.024Z" },
+    { "id": 26, "vehicleId": 1, "userId": 4, "rating": 2, "comment": "Tuve problemas con la radio y el GPS no estaba actualizado. No fue la mejor experiencia.", "date": "2025-10-27T08:00:00.024Z" },
+    { "id": 27, "vehicleId": 2, "userId": 5, "rating": 4, "comment": "Un coche muy práctico y fácil de aparcar. El propietario fue muy flexible con la hora de devolución.", "date": "2025-10-28T22:00:00.024Z" },
+    { "id": 28, "vehicleId": 3, "userId": 1, "rating": 5, "comment": "Simplemente perfecto. El coche es una gozada de conducir.", "date": "2025-10-29T19:40:00.024Z" },
+    { "id": 29, "vehicleId": 4, "userId": 3, "rating": 4, "comment": "Me gustó mucho el coche, aunque me costó un poco acostumbrarme a la caja de cambios automática.", "date": "2025-10-30T13:00:00.024Z" },
+    { "id": 30, "vehicleId": 1, "userId": 2, "rating": 5, "comment": "El mejor Toyota Yaris que he conducido. Muy bien mantenido.", "date": "2025-10-31T12:00:00.024Z" },
+    { "id": 31, "vehicleId": 2, "userId": 2, "rating": 4, "comment": "Coche fiable y económico. Justo lo que necesitaba para moverme por la ciudad.", "date": "2025-11-01T15:15:00.024Z" },
+    { "id": 32, "vehicleId": 4, "userId": 2, "rating": 5, "comment": "El Versa es increíblemente cómodo para viajes largos. Lo volveré a alquilar.", "date": "2025-11-02T18:00:00.024Z" }
   ],
   "telemetry": [
     {
