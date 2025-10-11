@@ -8,12 +8,9 @@ import { Vehicle } from '../../../listings/models/vehicle.model';
 import { User } from '../../../iam/models/user.model';
 import { VehicleService } from '../../../listings/services/vehicle.service';
 import { ReviewService } from '../../../reviews/services/review.service';
+import { BookingService } from '../../../booking/services/booking.service'; // Importado
 import { switchMap, forkJoin, map } from 'rxjs';
 
-/**
- * @Component
- * @description Component for tracking a vehicle's telemetry data in real-time.
- */
 @Component({
   selector: 'app-tracking',
   standalone: true,
@@ -24,35 +21,38 @@ import { switchMap, forkJoin, map } from 'rxjs';
 export class TrackingComponent implements OnInit {
   telemetry: Telemetry | undefined;
   vehicle: Vehicle | undefined;
-  owner: User | undefined;
+  renter: User | undefined; // Renombrado de 'owner' a 'renter'
   isLoading = true;
 
   constructor(
     private route: ActivatedRoute,
     private telemetryService: TelemetryService,
     private vehicleService: VehicleService,
-    private reviewService: ReviewService
+    private reviewService: ReviewService,
+    private bookingService: BookingService // Inyectado
   ) {}
 
-  /**
-   * @method ngOnInit
-   * @description Initializes the component by fetching the telemetry data, vehicle details,
-   * and owner information for the vehicle specified in the route.
-   */
   ngOnInit(): void {
     const vehicleId = Number(this.route.snapshot.paramMap.get('id'));
     if (vehicleId) {
       this.telemetryService.getTelemetryByVehicleId(vehicleId).pipe(
         switchMap(telemetry => {
           this.telemetry = telemetry;
+          const activeBooking$ = this.bookingService.getBookingsForOwner(telemetry.vehicleId).pipe(
+            map(bookings => bookings.find(b => b.estado === 'activa' && b.vehicleId === vehicleId))
+          );
+
           return forkJoin({
             vehicle: this.vehicleService.getVehicle(vehicleId),
-            users: this.reviewService.getUsers()
+            users: this.reviewService.getUsers(),
+            activeBooking: activeBooking$
           });
         }),
-        map(({ vehicle, users }) => {
+        map(({ vehicle, users, activeBooking }) => {
           this.vehicle = vehicle;
-          this.owner = users.find(u => u.id === vehicle.ownerId);
+          if (activeBooking) {
+            this.renter = users.find(u => u.id === activeBooking.userId);
+          }
           this.isLoading = false;
         })
       ).subscribe();

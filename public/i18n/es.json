@@ -155,9 +155,9 @@
     "VEHICLE_BRAND": "Marca",
     "VEHICLE_MODEL": "Modelo",
     "VEHICLE_YEAR": "Año",
-    "OWNER_DETAILS": "Detalles del Propietario",
-    "OWNER_NAME": "Nombre",
-    "OWNER_EMAIL": "Correo Electrónico",
+    "RENTER_DETAILS": "Detalles del Arrendatario",
+    "RENTER_NAME": "Nombre",
+    "RENTER_EMAIL": "Correo Electrónico",
     "TELEMETRY": "Telemetría"
   },
   "BOOKING_REQUESTS": {

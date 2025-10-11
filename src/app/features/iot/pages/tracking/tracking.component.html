@@ -21,10 +21,10 @@
       <p><strong>{{ 'TRACKING.STATUS' | translate }}:</strong> <span class="status" [ngClass]="telemetry.status.replace(' ', '-')">{{ telemetry.status }}</span></p>
     </div>
 
-    <div class="info-section" *ngIf="owner">
-      <h3>{{ 'TRACKING.OWNER_DETAILS' | translate }}</h3>
-      <p><strong>{{ 'TRACKING.OWNER_NAME' | translate }}:</strong> {{ owner.name }}</p>
-      <p><strong>{{ 'TRACKING.OWNER_EMAIL' | translate }}:</strong> {{ owner.email }}</p>
+    <div class="info-section" *ngIf="renter">
+      <h3>{{ 'TRACKING.RENTER_DETAILS' | translate }}</h3>
+      <p><strong>{{ 'TRACKING.RENTER_NAME' | translate }}:</strong> {{ renter.name }}</p>
+      <p><strong>{{ 'TRACKING.RENTER_EMAIL' | translate }}:</strong> {{ renter.email }}</p>
     </div>
   </div>
 </div>
