@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
-import {Language, TranslateService} from '@ngx-translate/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../../../features/iam/services/auth.service';
 
 /**
- * @Component
- * @description A component that allows the user to switch between supported languages.
+ * @summary Language preference toggle component.
+ * Provides a simple UI to switch between supported languages and persists
+ * the selection for authenticated users.
  */
 @Component({
   selector: 'app-language-switcher',
@@ -13,20 +16,39 @@ import { CommonModule } from '@angular/common';
   templateUrl: './language-switcher.component.html',
   styleUrls: ['./language-switcher.component.css']
 })
-export class LanguageSwitcherComponent {
-  currentLang: Language | null;
+export class LanguageSwitcherComponent implements OnInit, OnDestroy {
+  currentLang: string = 'en';
+  private sub?: Subscription;
 
-  constructor(private translate: TranslateService) {
-    this.currentLang = translate.defaultLang || translate.getFallbackLang();
+  constructor(private translate: TranslateService, private authService: AuthService) {
+    this.currentLang = this.translate.currentLang || this.translate.getDefaultLang() || 'en';
+  }
+
+  ngOnInit(): void {
+    this.sub = this.translate.onLangChange.subscribe((e) => {
+      this.currentLang = e.lang;
+    });
   }
 
   /**
-   * @method switchLanguage
-   * @description Switches the application's language.
-   * @param {string} lang - The language code to switch to (e.g., 'en', 'es').
+   * @summary Switch active language.
+   * @param lang Target language code.
    */
   switchLanguage(lang: string) {
+    if (!lang || lang === this.translate.getCurrentLang()) return;
+
+    const user = this.authService.getCurrentUser();
+    if (user) {
+      try {
+        localStorage.setItem(`lang:user:${user.id}`, lang);
+      } catch {}
+    }
+
     this.translate.use(lang);
     this.currentLang = lang;
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
   }
 }

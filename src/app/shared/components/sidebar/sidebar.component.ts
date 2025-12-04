@@ -7,8 +7,7 @@ import { AuthService } from '../../../features/iam/services/auth.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 /**
- * @Component
- * @description The sidebar component, which provides navigation links based on the current user's role.
+ * @summary Navigation sidebar rendering role-based links for the authenticated user.
  */
 @Component({
   selector: 'app-sidebar',
@@ -18,6 +17,9 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  /**
+   * @summary Stream of the current authenticated user.
+   */
   currentUser$: Observable<User | null>;
 
   constructor(private authService: AuthService) {

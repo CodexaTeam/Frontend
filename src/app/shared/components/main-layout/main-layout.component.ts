@@ -5,8 +5,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 
 /**
- * @Component
- * @description The main layout component for the application. It includes the header, sidebar, and the main content area where routed components are displayed.
+ * @summary Application layout housing the header, sidebar and routed content.
  */
 @Component({
   selector: 'app-main-layout',
@@ -16,11 +15,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent {
+  /**
+   * @summary Visibility state of the sidebar.
+   */
   isSidebarVisible = false;
 
   /**
-   * @method toggleSidebar
-   * @description Toggles the visibility of the sidebar, used for mobile navigation.
+   * @summary Toggles the sidebar visibility state.
    */
   toggleSidebar(): void {
     this.isSidebarVisible = !this.isSidebarVisible;

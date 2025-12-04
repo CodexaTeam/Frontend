@@ -4,17 +4,24 @@ import { AuthService } from '../../features/iam/services/auth.service';
 import { map, take } from 'rxjs/operators';
 
 /**
- * @summary Protects routes from anonymous access, redirecting unauthenticated users to login.
+ * @summary Redirects the empty child route to the appropriate section based on user role.
  */
-export const authGuard: CanActivateFn = () => {
+export const defaultRedirectGuard: CanActivateFn = () => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
   return authService.currentUser$.pipe(
     take(1),
     map(user => {
-      if (user) return true;
-      router.navigate(['/login']);
+      if (!user) {
+        router.navigate(['/login']);
+        return false;
+      }
+      if (user.role === 'ROLE_RENTER') {
+        router.navigate(['/dashboard']);
+      } else {
+        router.navigate(['/my-vehicles']);
+      }
       return false;
     })
   );

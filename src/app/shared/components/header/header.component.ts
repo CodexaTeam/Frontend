@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 
 /**
- * @Component
- * @description The main header component of the application. It displays user information,
- * a logout button, and a menu toggle for mobile view.
+ * @summary Application top header containing the language switcher, user info and session actions.
  */
 @Component({
   selector: 'app-header',
@@ -19,8 +17,14 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  /**
+   * @summary Emits when the menu toggle is clicked, typically to open/close a sidebar.
+   */
   @Output() menuToggleClicked = new EventEmitter<void>();
 
+  /**
+   * @summary Stream of the current authenticated user or null when not authenticated.
+   */
   currentUser$: Observable<User | null>;
 
   constructor(private authService: AuthService) {
@@ -28,16 +32,14 @@ export class HeaderComponent {
   }
 
   /**
-   * @method logout
-   * @description Logs out the current user by calling the AuthService.
+   * @summary Terminates the current session and navigates to the login page.
    */
-  logout() {
+  logout(): void {
     this.authService.logout();
   }
 
   /**
-   * @method onMenuToggle
-   * @description Emits an event when the menu toggle button is clicked.
+   * @summary Emits a menu toggle event to the parent component.
    */
   onMenuToggle(): void {
     this.menuToggleClicked.emit();

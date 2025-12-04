@@ -1,14 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/styles/colors.css';
+@import 'leaflet/dist/leaflet.css';
 
 body {
-  background-color: #f8f9fa; /* Un gris muy claro para el fondo */
+  background-color: #f8f9fa; /* Light gray page background */
   color: var(--text-dark);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
 }
 
-/* Estilo unificado para los títulos de página (H1) */
+/* Unified style for page headers (H1) */
 .page-header {
   color: var(--primary-color);
   font-size: 2.5em;
@@ -18,16 +19,16 @@ body {
   padding-bottom: 20px;
 }
 
-/* Estilo base para todas las "tarjetas" de la aplicación */
+/* Base style for application cards */
 .card {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0, 30, 80, 0.07);
   overflow: hidden;
-  /* CLAVE 1: La tarjeta es un contenedor flexible que apila sus hijos verticalmente. */
+  /* The card is a flex container stacking children vertically */
   display: flex;
   flex-direction: column;
-  /* CLAVE 2: Asegura que la tarjeta ocupe todo el espacio de su celda en la rejilla. */
+  /* Ensure the card fills its grid cell */
   height: 100%;
 }
 
@@ -36,7 +37,7 @@ body {
   box-shadow: 0 8px 30px rgba(0, 30, 80, 0.12);
 }
 
-/* Estilo unificado para botones de acción */
+/* Unified style for action buttons */
 .action-button {
   display: inline-block;
   padding: 10px 25px;
@@ -64,7 +65,7 @@ body {
 }
 .action-button.secondary:hover {
   background-color: #3aa5e8;
-  color: white; /* Añadido para mejor contraste en hover */
+  color: white; /* Better contrast on hover */
 }
 
 .loading-message, .empty-state {
@@ -75,4 +76,9 @@ body {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0, 30, 80, 0.07);
+}
+
+.snackbar-error {
+  background-color: #b00020; /* Material error color */
+  color: #fff;
 }
