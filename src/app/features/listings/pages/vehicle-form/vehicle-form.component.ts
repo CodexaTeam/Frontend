@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VehicleService } from '../../services/vehicle.service';
-import { AuthService } from '../../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/app/features/iam/services/auth.service';
+import { AuthService } from '../../../iam/services/auth.service';
 import Vehicle from '../../models/vehicle.model';
 import { take } from 'rxjs';
 import { TranslateModule, TranslateService, TranslatePipe } from '@ngx-translate/core';

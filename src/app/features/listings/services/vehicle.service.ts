@@ -4,10 +4,10 @@ import { Observable, forkJoin, map, switchMap, catchError, throwError } from 'rx
 import Vehicle from '../models/vehicle.model';
 import { VehicleDto } from '../models/vehicle.dto';
 import { VehicleAssembler } from '../assemblers/vehicle.assembler';
-import { UserService } from '../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/app/features/iam/services/user.service';
-import { environment } from '../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/environments/environment';
+import { UserService } from '../../iam/services/user.service';
+import { environment } from '../../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
-import { NotificationService } from '../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/app/shared/infrastructure/notification/notification.service';
+import { NotificationService } from '../../../shared/infrastructure/notification/notification.service';
 
 @Injectable({
   providedIn: 'root'

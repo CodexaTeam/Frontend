@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import Vehicle from '../../models/vehicle.model';
 import { VehicleService } from '../../services/vehicle.service';
-import { ReviewListComponent } from '../../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/app/features/reviews/components/review-list/review-list.component';
+import { ReviewListComponent } from '../../../reviews/components/review-list/review-list.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { switchMap } from 'rxjs/operators';
 import { forkJoin, of } from 'rxjs';
-import { User } from '../../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/app/features/iam/models/user.model';
-import { AuthService } from '../../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/app/features/iam/services/auth.service';
-import { GetMyBookingsUseCase } from '../../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/app/features/booking/application/use-cases/get-my-bookings.usecase';
-import { Booking } from '../../../../../../../../../../Users/joel_/Desktop/front-end-open-source/src/app/features/booking/models/booking.model';
+import { User } from '../../../iam/models/user.model';
+import { AuthService } from '../../../iam/services/auth.service';
+import { GetMyBookingsUseCase } from '../../../booking/application/use-cases/get-my-bookings.usecase';
+import { Booking } from '../../../booking/models/booking.model';
 
 @Component({
   selector: 'app-vehicle-detail',
