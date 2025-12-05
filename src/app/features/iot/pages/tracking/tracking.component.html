@@ -1,0 +1,72 @@
+<div class="tracking-container">
+  <!-- Contenedor del Mapa -->
+  <div id="map" class="map-container"></div>
+
+  <!-- Panel de Estado Superpuesto -->
+  <div class="status-panel">
+    <div class="status-header">
+      <h3>📍 Monitor de Rastreo en Tiempo Real</h3>
+    </div>
+
+    <div class="status-content">
+      <!-- 🅿️ Mensaje informativo cuando el vehículo está estacionado -->
+      <div class="status-item" *ngIf="vehicleState === 'Estacionado'"
+           style="background: #FFF3E0; padding: 12px; border-radius: 8px; margin-bottom: 12px; border-left: 4px solid #FF9800;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 24px;">🅿️</span>
+          <div>
+            <div style="font-weight: bold; color: #E65100; font-size: 14px;">Vehículo Estacionado</div>
+            <div style="font-size: 12px; color: #666; margin-top: 4px;">Este vehículo está disponible para renta</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nombre del Arrendatario (solo si está rentado) -->
+      <div class="status-item" *ngIf="vehicleState !== 'Estacionado'">
+        <span class="status-label">👤 Conductor:</span>
+        <span class="status-value">{{ renterName }}</span>
+      </div>
+
+      <!-- Estado Actual -->
+      <div class="status-item">
+        <span class="status-label">📊 Estado:</span>
+        <span class="status-value status-badge"
+              [style.background-color]="statusColor"
+              [style.color]="'white'">
+          {{ vehicleState }}
+        </span>
+      </div>
+
+      <!-- Velocidad (ocultar si está estacionado) -->
+      <div class="status-item" *ngIf="vehicleState !== 'Estacionado'">
+        <span class="status-label">🚀 Velocidad:</span>
+        <span class="status-value speed-value">{{ currentSpeed }} km/h</span>
+      </div>
+
+      <!-- Nivel de Gasolina (ocultar si está estacionado) -->
+      <div class="status-item" *ngIf="vehicleState !== 'Estacionado'">
+        <span class="status-label">⛽ Gasolina:</span>
+        <span class="status-value fuel-value"
+              [class.low-fuel]="currentFuel <= 20"
+              [class.critical-fuel]="currentFuel <= 10">
+          {{ currentFuel }}%
+        </span>
+      </div>
+
+      <!-- Información adicional -->
+      <div class="status-item timestamp">
+        <span class="status-label">🕐 Actualización:</span>
+        <span class="status-value">{{ vehicleState === 'Estacionado' ? 'Posición fija' : 'En tiempo real' }}</span>
+      </div>
+    </div>
+
+    <!-- Indicador de estado visual -->
+    <div class="status-indicator"
+         [class.moving]="currentSpeed > 0 && vehicleState !== 'Estacionado'"
+         [class.stopped]="currentSpeed === 0 || vehicleState === 'Estacionado'"
+         [class.parked]="vehicleState === 'Estacionado'">
+      <div class="pulse-dot"></div>
+    </div>
+  </div>
+</div>
+
